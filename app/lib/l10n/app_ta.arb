@@ -1,0 +1,488 @@
+{
+  "@@locale": "ta",
+  "appTitle": "dineos",
+  "@appTitle": {
+    "description": "Nama produk. Jangan diterjemahkan."
+  },
+  "commonCancel": "ரத்து செய்",
+  "commonDelete": "நீக்கு",
+  "commonRemove": "அகற்று",
+  "commonClose": "மூடு",
+  "commonDone": "முடிந்தது",
+  "commonSave": "மாற்றங்களைச் சேமி",
+  "commonAdd": "சேர்",
+  "commonName": "பெயர்",
+  "commonAddress": "முகவரி",
+  "commonPort": "போர்ட்",
+  "commonPrice": "விலை",
+  "commonTotal": "மொத்தம்",
+  "commonSubtotal": "துணை மொத்தம்",
+  "commonNote": "குறிப்பு",
+  "commonReason": "காரணம்",
+  "commonAmount": "தொகை",
+  "commonReference": "குறிப்பு எண்",
+  "commonDescription": "விளக்கம்",
+  "commonCategory": "பிரிவு",
+  "commonPhoto": "புகைப்படம்",
+  "commonOptions": "விருப்பங்கள்",
+  "commonTags": "குறிச்சொற்கள்",
+  "commonTryAgain": "மீண்டும் முயற்சி",
+  "commonCouldNotLoad": "ஏற்ற முடியவில்லை",
+  "commonTest": "சோதனை",
+  "commonEarlier": "முன்னர்",
+  "commonLater": "பின்னர்",
+  "commonAll": "அனைத்தும்",
+  "commonOn": "ஆன்",
+  "commonOff": "ஆஃப்",
+  "signInTitle": "உள்நுழை",
+  "signInUsername": "பயனர்பெயர்",
+  "signInPin": "பின்",
+  "signInUseDifferentServer": "வேறு சேவையகத்தைப் பயன்படுத்து",
+  "connectTitle": "உங்கள் சேவையகத்துடன் இணையுங்கள்",
+  "connectAction": "இணை",
+  "connectOnThisNetwork": "இந்த வலையமைப்பில்",
+  "connectSubtitle": "உணவக மேலாண்மை",
+  "connectSubtitleLong": "உங்கள் உணவகத்தை இயக்கும் கணினியை நோக்கி இந்தச் சாதனத்தைக் காட்டுங்கள்.",
+  "connectFooter": "என்றும் இலவசம். உங்கள் தரவு உங்கள் கணினியிலேயே இருக்கும்.",
+  "connectServerHelper": "சேவையகத்தை இந்தக் கணினியில் இயக்குகிறீர்களா? அப்படியே விடுங்கள்.",
+  "connectRunOnThisComputer": "உணவகத்தை இந்தக் கணினியில் இயக்கு",
+  "connectRunOnThisComputerHint": "அனைத்தும் இங்கேயே அமையும். டேப்லெட்டுகளும் சமையலறைத் திரையும் இந்தக் கணினியுடன் இணையும்.",
+  "connectScanCode": "குறியீட்டை ஸ்கேன் செய்",
+  "connectServerAddress": "சேவையக முகவரி",
+  "connectOr": "அல்லது",
+  "connectScanPointAtCode": "குறியீட்டை நோக்கிக் காட்டு",
+  "connectScanTypeInstead": "பதிலாகத் தட்டச்சு செய்",
+  "setupTitle": "உங்கள் உணவகத்தை அமையுங்கள்",
+  "kdsOnThePass": "பாஸில்",
+  "kdsNothingOnThePass": "பாஸில் எதுவும் இல்லை",
+  "kdsCouldNotUpdate": "புதுப்பிக்க முடியவில்லை: {error}",
+  "@kdsCouldNotUpdate": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "navPos": "கல்லா",
+  "navKds": "சமையலறை",
+  "navManager": "மேலாளர்",
+  "navSignOut": "வெளியேறு",
+  "navSwitchShell": "திரையை மாற்று",
+  "floorTitle": "தளம்",
+  "floorHint": "பில்லைத் திறக்க அல்லது எடுக்க மேசையைத் தட்டவும்.",
+  "floorNoTables": "மேசைகள் அமைக்கப்படவில்லை",
+  "floorTakeaway": "எடுத்துச் செல்",
+  "floorOpenBill": "பில்லைத் திற",
+  "floorHowManyGuests": "எத்தனை விருந்தினர்?",
+  "floorSeatTable": "{label}-இல் அமர்த்து",
+  "@floorSeatTable": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "floorCouldNotOpen": "மேசையைத் திறக்க முடியவில்லை: {error}",
+  "@floorCouldNotOpen": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "floorCouldNotStart": "ஆர்டரைத் தொடங்க முடியவில்லை: {error}",
+  "@floorCouldNotStart": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "floorInUse": "பயனில்",
+  "orderBackToFloor": "தளத்திற்குத் திரும்பு",
+  "orderNothingHere": "இங்கே எதுவும் இல்லை",
+  "orderMenuEmpty": "மெனு காலி",
+  "orderBillGone": "இந்த பில் போய்விட்டது",
+  "orderCouldNotAdd": "அதைச் சேர்க்க முடியவில்லை: {error}",
+  "@orderCouldNotAdd": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "orderSoldOut": "86",
+  "orderAddToBill": "பில்லில் சேர்",
+  "orderNoteForKitchen": "சமையலறைக்குக் குறிப்பு",
+  "orderUpTo": "{count} வரை",
+  "@orderUpTo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "moveBillTitle": "பில் #{number}-ஐ நகர்த்து",
+  "@moveBillTitle": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "moveBillNowhere": "அதை நகர்த்த வேறு இடமில்லை.",
+  "moveBillWhereTo": "எங்கே நகர்த்துவது?",
+  "discountTitle": "தள்ளுபடி",
+  "discountAmountOff": "தொகையில் தள்ளுபடி",
+  "discountNewSubtotal": "புதிய துணை மொத்தம்",
+  "discountReasonHint": "இதிலிருந்துதான் சேவைக் கட்டணமும் வரியும் கணக்கிடப்படும்.",
+  "discountClear": "அழி",
+  "paymentTitle": "அவர்கள் எப்படிச் செலுத்துகிறார்கள்?",
+  "paymentCashReceived": "ரொக்கம் பெறப்பட்டது",
+  "paymentChangeDue": "மீதித் தொகை",
+  "paymentPaid": "செலுத்தப்பட்டது",
+  "paymentTake": "{amount} வாங்கு",
+  "@paymentTake": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentTakenSoFar": "இதுவரை வாங்கியது",
+  "paymentRemovePayment": "இந்தக் கட்டணத்தை நீக்கு",
+  "paymentReceipt": "ரசீது",
+  "receiptTitle": "ரசீது",
+  "receiptPrintTo": "{printer}-இல் அச்சிடு",
+  "@receiptPrintTo": {
+    "placeholders": {
+      "printer": {
+        "type": "String"
+      }
+    }
+  },
+  "shiftCloseTitle": "உங்கள் ஷிப்டை முடி",
+  "shiftCashInDrawer": "டிராயரில் ரொக்கம்",
+  "shiftCashTaken": "வாங்கிய ரொக்கம்",
+  "shiftCounted": "எண்ணியது",
+  "shiftOpeningFloat": "தொடக்கத் தொகை",
+  "shiftShouldBeInDrawer": "டிராயரில் இருக்க வேண்டியது",
+  "shiftHereIsWhat": "கணக்கு இதோ.",
+  "shiftClosed": "ஷிப்ட் முடிந்தது",
+  "summaryTakings": "வருமானம்",
+  "summaryHowItAddsUp": "கூட்டுத்தொகை எப்படி",
+  "summaryHowItWasPaid": "எப்படிச் செலுத்தப்பட்டது",
+  "summaryTheDrawer": "டிராயர்",
+  "summaryCancelled": "ரத்து",
+  "menuItemsTitle": "உருப்படிகள்",
+  "menuItemsSubtitle": "நீங்கள் விற்பனை செய்வது அனைத்தும், அதன் விலையுடன்.",
+  "menuItemsNew": "புதிய உருப்படி",
+  "menuItemsNone": "இன்னும் உருப்படிகள் இல்லை",
+  "menuItemsNoMatch": "பொருந்துவது எதுவும் இல்லை",
+  "menuItemsAddFirst": "உங்கள் முதல் உருப்படியைச் சேர்",
+  "menuItemsAddCategoryFirst": "முதலில் பிரிவைச் சேர்",
+  "menuCategoriesTitle": "பிரிவுகள்",
+  "menuCategoriesSubtitle": "உங்கள் மெனுவின் பகுதிகள். கல்லாவிலும் இதே வரிசை.",
+  "menuCategoriesNew": "புதிய பிரிவு",
+  "menuCategoriesNone": "இன்னும் பிரிவுகள் இல்லை",
+  "menuCategoriesAddFirst": "உங்கள் முதல் பிரிவைச் சேர்",
+  "menuCategoriesHidden": "மறைக்கப்பட்டது",
+  "menuCategoriesTileColour": "ஓட்டின் நிறம்",
+  "menuCategoriesTileColourHint": "பணியாளர்கள் விரைவில் கண்டுபிடிக்க கல்லாவில் காட்டப்படும்.",
+  "menuCategoriesVisible": "கல்லாவில் தெரியும்",
+  "menuCategoriesStation": "இதைச் செய்பவர்",
+  "menuCategoriesStationHint": "இந்தப் பிரிவின் ஆர்டர்கள் அந்த நிலையத்தில் அச்சாகும்.",
+  "menuItemOnTheMenu": "மெனுவில் உள்ளது",
+  "menuItemInStock": "இருப்பில்",
+  "menuItemCode": "உருப்படி குறியீடு",
+  "menuItemPrepTime": "தயாரிப்பு நேரம்",
+  "modifiersTitle": "மாற்றிகள்",
+  "modifiersSubtitle": "உருப்படிகளுடன் இணைக்கக்கூடிய தேர்வுகள். ஒருமுறை உருவாக்கி எங்கும் பயன்படுத்துங்கள்.",
+  "modifiersNewGroup": "புதிய குழு",
+  "modifiersNone": "இன்னும் மாற்றிக் குழுக்கள் இல்லை",
+  "modifiersCreateFirst": "உங்கள் முதல் குழுவை உருவாக்கு",
+  "modifiersAddOption": "விருப்பத்தைச் சேர்",
+  "modifiersNoOptions": "இன்னும் விருப்பங்கள் இல்லை.",
+  "modifiersAllowMoreThanOne": "ஒன்றுக்கு மேற்பட்டதை அனுமதி",
+  "modifiersMustBeAnswered": "பதில் கட்டாயம்",
+  "modifiersMaxSelectable": "தேர்ந்தெடுக்கக்கூடிய அதிகபட்சம்",
+  "modifiersPriceChange": "விலை மாற்றம்",
+  "modifiersOffered": "வழங்கப்படுகிறது",
+  "tablesTitle": "மேசைகள்",
+  "tablesSubtitle": "உங்கள் தளம். அறையில் பகுதிகள் இருந்தால் மண்டலங்களாகப் பிரியுங்கள்.",
+  "tablesNew": "புதிய மேசை",
+  "tablesNone": "இன்னும் மேசைகள் இல்லை",
+  "tablesAddFirst": "உங்கள் முதல் மேசையைச் சேர்",
+  "tablesNameOrNumber": "பெயர் அல்லது எண்",
+  "tablesSeats": "இருக்கைகள்",
+  "tablesZone": "மண்டலம்",
+  "tablesInUse": "பயனில் உள்ளது",
+  "tablesCodes": "மேசைக் குறியீடுகள்",
+  "tablesCodesNone": "இன்னும் மேசைகள் பயனில் இல்லை.",
+  "tablesDeleteConfirm": "{label}-ஐ நீக்கவா?",
+  "@tablesDeleteConfirm": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "staffTitle": "பணியாளர்கள்",
+  "staffSubtitle": "யார் உள்நுழையலாம், அவர்களுக்கு என்ன அனுமதி.",
+  "staffAddSomeone": "ஒருவரைச் சேர்",
+  "staffNobodyYet": "இன்னும் யாரும் இல்லை",
+  "staffCanSignIn": "உள்நுழையலாம்",
+  "staffWhatTheyCanDo": "அவர்கள் என்ன செய்யலாம்",
+  "staffYou": "நீங்கள்",
+  "staffCannotDisableSelf": "உங்கள் கணக்கை நீங்களே அணைக்க முடியாது.",
+  "staffGiveNewPin": "அவர்களுக்குப் புதிய பின் கொடு",
+  "staffNewPinFor": "{name}-க்குப் புதிய பின்",
+  "@staffNewPinFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "staffSetPin": "பின் அமை",
+  "staffRemoveConfirm": "{name}-ஐ நீக்கவா?",
+  "@staffRemoveConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reportsTitle": "அறிக்கைகள்",
+  "reportsSubtitle": "ஒவ்வொரு நாளின் கணக்கு.",
+  "reportsWhatSold": "என்ன விற்றது",
+  "reportsWhoServedIt": "யார் பரிமாறினார்",
+  "reportsByHour": "மணிநேர வாரியாக",
+  "reportsExportCsv": "CSV ஏற்றுமதி",
+  "reportsSaved": "அறிக்கை சேமிக்கப்பட்டது.",
+  "reportsCouldNotSave": "சேமிக்க முடியவில்லை: {error}",
+  "@reportsCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "activityTitle": "செயல்பாடு",
+  "activitySubtitle": "தள்ளுபடி, ரத்து மற்றும் நீக்கங்கள் — ஒவ்வொன்றுடனும் பெயர்.",
+  "activityMoneyLeavingOnly": "வெளியேறும் பணம் மட்டும்",
+  "settingsTitle": "அமைப்புகள்",
+  "settingsRestaurant": "உணவகம்",
+  "settingsRestaurantHint": "உங்கள் உணவகம் தன்னை எப்படி அடையாளப்படுத்துகிறது, என்ன கட்டணம்.",
+  "settingsCharges": "கட்டணங்கள்",
+  "settingsCurrency": "நாணயம்",
+  "settingsTaxRate": "வரி விகிதம்",
+  "settingsTaxIncluded": "மெனு விலையில் வரி அடங்கும்",
+  "settingsServiceCharge": "சேவைக் கட்டணம்",
+  "settingsPrinters": "அச்சுப்பொறிகள்",
+  "settingsReceipts": "ரசீதுகள்",
+  "settingsHeader": "தலைப்பு",
+  "settingsFooter": "அடிக்குறிப்பு",
+  "settingsServer": "சேவையகம்",
+  "settingsThisDevice": "இந்தச் சாதனம்",
+  "settingsAddTablet": "டேப்லெட்டைச் சேர்",
+  "settingsSignOut": "வெளியேறு",
+  "settingsDisconnect": "துண்டி",
+  "settingsDisconnectConfirm": "இந்தச் சாதனத்தைத் துண்டிக்கவா?",
+  "printerNew": "அச்சுப்பொறி சேர்",
+  "printerPaperWidth": "காகித அகலம்",
+  "printerWhatItPrints": "அது எதை அச்சிடும்",
+  "printerInUse": "பயனில்",
+  "printerRemoveConfirm": "{name}-ஐ நீக்கவா?",
+  "@printerRemoveConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "guestScanTitle": "ஆர்டருக்கு ஸ்கேன் செய்",
+  "guestMenuTitle": "மெனு",
+  "signInErrorNoUsername": "உங்கள் பயனர்பெயரை உள்ளிடுங்கள்.",
+  "signInErrorShortPin": "உங்கள் பின் குறைந்தது 4 இலக்கங்கள்.",
+  "ticketSendCourseOnly": "{course} மட்டும் அனுப்பு",
+  "@ticketSendCourseOnly": {
+    "placeholders": {
+      "course": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketBackToFloor": "தளத்திற்குத் திரும்பு",
+  "ticketCouldNotSend": "அனுப்ப முடியவில்லை: {error}",
+  "@ticketCouldNotSend": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketCouldNotCancel": "ரத்து செய்ய முடியவில்லை: {error}",
+  "@ticketCouldNotCancel": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketEmptyBill": "இந்த பில்லில் இன்னும் எதுவும் இல்லை",
+  "ticketVoided": "ரத்து செய்யப்பட்டது",
+  "ticketSavedNotSent": "இங்கே சேமிக்கப்பட்டது — இன்னும் அனுப்பவில்லை",
+  "ticketQuantity": "அளவு",
+  "ticketCourse": "உணவு வரிசை",
+  "ticketRetry": "மீண்டும் முயற்சி",
+  "kdsStatusQueued": "வரிசையில்",
+  "kdsStatusPreparing": "தயாராகிறது",
+  "kdsStatusReady": "தயார்",
+  "outletTitle": "கிளை",
+  "outletSwitch": "கிளையை மாற்று",
+  "outletAll": "அனைத்துக் கிளைகள்",
+  "settingsLanguage": "மொழி",
+  "settingsLanguageHint": "இந்தச் சாதனத்தின் மொழி",
+  "floorNoTablesHint": "மேலாளர் தளம் → மேசைகளில் மேசைகளைச் சேர்க்கலாம். அதுவரை நீங்கள் எடுத்துச் செல் ஆர்டர்களை எடுக்கலாம்.",
+  "splitOwnBill": "அல்லது ஒருவருக்குத் தனி பில் கொடுங்கள்",
+  "splitSeparateTax": "ஒவ்வொரு பில்லிலும் சேவைக் கட்டணமும் வரியும் தனித்தனியே கணக்கிடப்படும்.",
+  "splitEvenTitle": "அனைவரும் தங்கள் பங்கைச் செலுத்துங்கள்",
+  "splitEvenHint": "ஒரு பில், சமமாகப் பிரி. ஒவ்வொரு பங்கையும் தனிக் கட்டணமாக வாங்குங்கள்.",
+  "kdsEmptyHint": "கல்லா அனுப்பியதும் டிக்கெட்டுகள் இங்கே தோன்றும்.",
+  "settingsLanguageSystem": "சாதன மொழி",
+  "invTitle": "சரக்கு",
+  "@invTitle": {
+    "description": "Inventory section title"
+  },
+  "invSubtitle": "கையிருப்பு, அதன் மதிப்பு, எதை மீண்டும் வாங்க வேண்டும்.",
+  "@invSubtitle": {
+    "description": "Inventory section subtitle"
+  },
+  "invNewItem": "புதிய பொருள்",
+  "@invNewItem": {
+    "description": "New stock item button"
+  },
+  "invStockValue": "சரக்கு மதிப்பு",
+  "@invStockValue": {
+    "description": "Total stock value label"
+  },
+  "invLowStock": "குறைந்த சரக்கு",
+  "@invLowStock": {
+    "description": "Low stock section header"
+  },
+  "invLastRestock": "கடைசி கொள்முதல் {date}",
+  "@invLastRestock": {
+    "description": "Last restock date, {date} placeholder",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "invNeedsReview": "மதிப்பாய்வு தேவை",
+  "@invNeedsReview": {
+    "description": "Needs review flag"
+  },
+  "invLow": "குறைவு",
+  "@invLow": {
+    "description": "Low badge"
+  },
+  "invBalance": "இருப்பு",
+  "@invBalance": {
+    "description": "Current balance label"
+  },
+  "invThreshold": "மீண்டும் வாங்கும் நிலை",
+  "@invThreshold": {
+    "description": "Reorder threshold label"
+  },
+  "invUnit": "அலகு",
+  "@invUnit": {
+    "description": "Unit label (kg, L, pcs)"
+  },
+  "invCostPerUnit": "{unit} ஒன்றுக்கான விலை",
+  "@invCostPerUnit": {
+    "description": "Cost per unit, {unit} placeholder",
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "invActive": "செயலில்",
+  "@invActive": {
+    "description": "Active switch label"
+  },
+  "invPurchase": "கொள்முதல்",
+  "@invPurchase": {
+    "description": "Purchase action"
+  },
+  "invWastage": "வீண்",
+  "@invWastage": {
+    "description": "Wastage action"
+  },
+  "invAdjust": "சரிசெய்",
+  "@invAdjust": {
+    "description": "Adjust action"
+  },
+  "invQuantity": "அளவு",
+  "@invQuantity": {
+    "description": "Quantity field label"
+  },
+  "invNote": "குறிப்பு",
+  "@invNote": {
+    "description": "Note field label"
+  },
+  "invEmpty": "இன்னும் சரக்கு பொருட்கள் இல்லை",
+  "@invEmpty": {
+    "description": "Empty inventory title"
+  },
+  "invEmptyHint": "மாவு, பால், கோழி சேர்க்கவும் — சமையலறையில் இருப்பதை.",
+  "@invEmptyHint": {
+    "description": "Empty inventory hint"
+  },
+  "invRecipe": "செய்முறை",
+  "@invRecipe": {
+    "description": "Recipe section title"
+  },
+  "invRecipeHint": "ஒவ்வொரு பரிமாறலுக்கும் தேவையானவை. பரிமாறும்போது தானாகக் கழியும்.",
+  "@invRecipeHint": {
+    "description": "Recipe section hint"
+  },
+  "invAddIngredient": "பொருள் சேர்க்கவும்",
+  "@invAddIngredient": {
+    "description": "Add ingredient button"
+  },
+  "invQtyPerServing": "ஒரு பரிமாறலுக்கு",
+  "@invQtyPerServing": {
+    "description": "Quantity per serving label"
+  },
+  "invSaveItemFirst": "முதலில் பொருளைச் சேமிக்கவும், பிறகு செய்முறையைச் சேர்க்கவும்.",
+  "@invSaveItemFirst": {
+    "description": "Recipe on unsaved item hint"
+  },
+  "invPurchaseTitle": "கொள்முதலைப் பதிவு செய்க",
+  "@invPurchaseTitle": {
+    "description": "Purchase dialog title"
+  },
+  "invWastageTitle": "வீணாவதைப் பதிவு செய்க",
+  "@invWastageTitle": {
+    "description": "Wastage dialog title"
+  },
+  "invAdjustTitle": "சரக்கைச் சரிசெய்க",
+  "@invAdjustTitle": {
+    "description": "Adjust dialog title"
+  },
+  "invAdjustHint": "தணிக்கை செய்யப்பட்ட திருத்தங்கள் — எ.கா. எண்ணிக்கை வேறுபாடு.",
+  "@invAdjustHint": {
+    "description": "Adjust dialog hint"
+  },
+  "invPickIngredient": "பொருளைத் தேர்ந்தெடுக்கவும்",
+  "@invPickIngredient": {
+    "description": "Pick ingredient dialog title"
+  },
+  "invEdit": "திருத்து",
+  "@invEdit": {
+    "description": "Edit action"
+  }
+}

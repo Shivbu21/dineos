@@ -1,0 +1,488 @@
+{
+  "@@locale": "ml",
+  "appTitle": "dineos",
+  "@appTitle": {
+    "description": "Nama produk. Jangan diterjemahkan."
+  },
+  "commonCancel": "റദ്ദാക്കുക",
+  "commonDelete": "മായ്ക്കുക",
+  "commonRemove": "നീക്കം ചെയ്യുക",
+  "commonClose": "അടയ്ക്കുക",
+  "commonDone": "കഴിഞ്ഞു",
+  "commonSave": "മാറ്റങ്ങൾ സേവ് ചെയ്യുക",
+  "commonAdd": "ചേർക്കുക",
+  "commonName": "പേര്",
+  "commonAddress": "വിലാസം",
+  "commonPort": "പോർട്ട്",
+  "commonPrice": "വില",
+  "commonTotal": "ആകെ",
+  "commonSubtotal": "സബ്ടോട്ടൽ",
+  "commonNote": "കുറിപ്പ്",
+  "commonReason": "കാരണം",
+  "commonAmount": "തുക",
+  "commonReference": "റഫറൻസ്",
+  "commonDescription": "വിവരണം",
+  "commonCategory": "വിഭാഗം",
+  "commonPhoto": "ഫോട്ടോ",
+  "commonOptions": "ഓപ്ഷനുകൾ",
+  "commonTags": "ടാഗുകൾ",
+  "commonTryAgain": "വീണ്ടും ശ്രമിക്കുക",
+  "commonCouldNotLoad": "ലോഡ് ചെയ്യാനായില്ല",
+  "commonTest": "പരീക്ഷണം",
+  "commonEarlier": "ಮുമ്പ്",
+  "commonLater": "പിന്നീട്",
+  "commonAll": "എല്ലാം",
+  "commonOn": "ഓൺ",
+  "commonOff": "ഓഫ്",
+  "signInTitle": "സൈൻ ഇൻ",
+  "signInUsername": "യൂസർനേം",
+  "signInPin": "പിൻ",
+  "signInUseDifferentServer": "വേറെ സെർവർ ഉപയോഗിക്കുക",
+  "connectTitle": "നിങ്ങളുടെ സെർവറുമായി ബന്ധിപ്പിക്കുക",
+  "connectAction": "ബന്ധിപ്പിക്കുക",
+  "connectOnThisNetwork": "ഈ നെറ്റ്‌വർക്കിൽ",
+  "connectSubtitle": "റെസ്റ്റോറന്റ് മാനേജ്മെന്റ്",
+  "connectSubtitleLong": "നിങ്ങളുടെ റെസ്റ്റോറന്റ് പ്രവർത്തിപ്പിക്കുന്ന കമ്പ്യൂട്ടറിനു നേരെ ഈ ഉപകരണം കാട്ടുക.",
+  "connectFooter": "എപ്പോഴും സൗജന്യം. നിങ്ങളുടെ ഡാറ്റ നിങ്ങളുടെ മെഷീനിൽ തന്നെ.",
+  "connectServerHelper": "സെർവർ ഈ കമ്പ്യൂട്ടറിൽ തന്നെയാണോ പ്രവർത്തിപ്പിക്കുന്നത്? അങ്ങനെ തന്നെ വയ്ക്കുക.",
+  "connectRunOnThisComputer": "റെസ്റ്റോറന്റ് ഈ കമ്പ്യൂട്ടറിൽ തന്നെ പ്രവർത്തിപ്പിക്കുക",
+  "connectRunOnThisComputerHint": "എല്ലാം ഇവിടെ സജ്ജമാകും. ടാബ്‌ലെറ്റുകളും അടുക്കള സ്ക്രീനും ഈ മെഷീനുമായി ബന്ധിപ്പിക്കും.",
+  "connectScanCode": "കോഡ് സ്കാൻ ചെയ്യുക",
+  "connectServerAddress": "സെർവർ വിലാസം",
+  "connectOr": "അല്ലെങ്കിൽ",
+  "connectScanPointAtCode": "കോഡിനു നേരെ കാട്ടുക",
+  "connectScanTypeInstead": "പകരം ടൈപ്പ് ചെയ്യുക",
+  "setupTitle": "നിങ്ങളുടെ റെസ്റ്റോറന്റ് സജ്ജമാക്കുക",
+  "kdsOnThePass": "പാസിൽ",
+  "kdsNothingOnThePass": "പാസിൽ ഒന്നുമില്ല",
+  "kdsCouldNotUpdate": "അപ്ഡേറ്റ് ചെയ്യാനായില്ല: {error}",
+  "@kdsCouldNotUpdate": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "navPos": "കൗണ്ടർ",
+  "navKds": "അടുക്കള",
+  "navManager": "മാനേജർ",
+  "navSignOut": "സൈൻ ഔട്ട്",
+  "navSwitchShell": "സ്ക്രീൻ മാറ്റുക",
+  "floorTitle": "ഫ്ലോർ",
+  "floorHint": "ബിൽ തുറക്കാനോ എടുക്കാനോ ടേബിളിൽ ടാപ്പ് ചെയ്യുക.",
+  "floorNoTables": "ടേബിളുകൾ സജ്ജമാക്കിയിട്ടില്ല",
+  "floorTakeaway": "ടേക്ക് എവേ",
+  "floorOpenBill": "ബിൽ തുറക്കുക",
+  "floorHowManyGuests": "എത്ര അതിഥികൾ?",
+  "floorSeatTable": "{label}-ൽ ഇരുത്തുക",
+  "@floorSeatTable": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "floorCouldNotOpen": "ടേബിൾ തുറക്കാനായില്ല: {error}",
+  "@floorCouldNotOpen": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "floorCouldNotStart": "ഓർഡർ തുടങ്ങാനായില്ല: {error}",
+  "@floorCouldNotStart": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "floorInUse": "ഉപയോഗത്തിൽ",
+  "orderBackToFloor": "ഫ്ലോറിലേക്ക് മടങ്ങുക",
+  "orderNothingHere": "ഇവിടെ ഒന്നുമില്ല",
+  "orderMenuEmpty": "മെനു ശൂന്യമാണ്",
+  "orderBillGone": "ഈ ബിൽ പോയി",
+  "orderCouldNotAdd": "അത് ചേർക്കാനായില്ല: {error}",
+  "@orderCouldNotAdd": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "orderSoldOut": "86",
+  "orderAddToBill": "ബില്ലിൽ ചേർക്കുക",
+  "orderNoteForKitchen": "അടുക്കളയ്ക്കുള്ള കുറിപ്പ്",
+  "orderUpTo": "{count} വരെ",
+  "@orderUpTo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "moveBillTitle": "ബിൽ #{number} മാറ്റുക",
+  "@moveBillTitle": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "moveBillNowhere": "അത് മാറ്റാൻ വേറെ സ്ഥലമില്ല.",
+  "moveBillWhereTo": "എങ്ങോട്ട് മാറ്റണം?",
+  "discountTitle": "കിഴിവ്",
+  "discountAmountOff": "തുകയിൽ കിഴിവ്",
+  "discountNewSubtotal": "പുതിയ സബ്ടോട്ടൽ",
+  "discountReasonHint": "ഇതിൽ നിന്നാണ് സർവീസ് ചാർജും നികുതിയും കണക്കാക്കുന്നത്.",
+  "discountClear": "മായ്ക്കുക",
+  "paymentTitle": "അവർ എങ്ങനെ അടയ്ക്കുന്നു?",
+  "paymentCashReceived": "പണം ലഭിച്ചു",
+  "paymentChangeDue": "തിരികെ നൽകേണ്ടത്",
+  "paymentPaid": "അടച്ചു",
+  "paymentTake": "{amount} വാങ്ങുക",
+  "@paymentTake": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentTakenSoFar": "ഇതുവരെ വാങ്ങിയത്",
+  "paymentRemovePayment": "ഈ പേയ്മെന്റ് നീക്കം ചെയ്യുക",
+  "paymentReceipt": "രസീത്",
+  "receiptTitle": "രസീത്",
+  "receiptPrintTo": "{printer}-ൽ പ്രിന്റ് ചെയ്യുക",
+  "@receiptPrintTo": {
+    "placeholders": {
+      "printer": {
+        "type": "String"
+      }
+    }
+  },
+  "shiftCloseTitle": "നിങ്ങളുടെ ഷിഫ്റ്റ് അവസാനിപ്പിക്കുക",
+  "shiftCashInDrawer": "ഡ്രോവറിലെ പണം",
+  "shiftCashTaken": "വാങ്ങിയ പണം",
+  "shiftCounted": "എണ്ണിയത്",
+  "shiftOpeningFloat": "തുടക്കത്തെ തുക",
+  "shiftShouldBeInDrawer": "ഡ്രോവറിൽ ഉണ്ടാകേണ്ടത്",
+  "shiftHereIsWhat": "കണക്ക് ഇതാ.",
+  "shiftClosed": "ഷിഫ്റ്റ് അവസാനിച്ചു",
+  "summaryTakings": "വരുമാനം",
+  "summaryHowItAddsUp": "ആകെത്തുക എങ്ങനെ",
+  "summaryHowItWasPaid": "എങ്ങനെ അടയ്ക്കപ്പെട്ടു",
+  "summaryTheDrawer": "ഡ്രോവർ",
+  "summaryCancelled": "റദ്ദാക്കിയത്",
+  "menuItemsTitle": "ഇനങ്ങൾ",
+  "menuItemsSubtitle": "നിങ്ങൾ വിൽക്കുന്നതെല്ലാം, അതിന്റെ വിലയോടെ.",
+  "menuItemsNew": "പുതിയ ഇനം",
+  "menuItemsNone": "ഇതുവരെ ഇനങ്ങളില്ല",
+  "menuItemsNoMatch": "പൊരുത്തപ്പെടുന്നതൊന്നുമില്ല",
+  "menuItemsAddFirst": "നിങ്ങളുടെ ആദ്യ ഇനം ചേർക്കുക",
+  "menuItemsAddCategoryFirst": "ആദ്യം വിഭാഗം ചേർക്കുക",
+  "menuCategoriesTitle": "വിഭാഗങ്ങൾ",
+  "menuCategoriesSubtitle": "നിങ്ങളുടെ മെനുവിന്റെ ഭാഗങ്ങൾ. കൗണ്ടറിലും ഇതേ ക്രമം.",
+  "menuCategoriesNew": "പുതിയ വിഭാഗം",
+  "menuCategoriesNone": "ഇതുവരെ വിഭാഗങ്ങളില്ല",
+  "menuCategoriesAddFirst": "നിങ്ങളുടെ ആദ്യ വിഭാഗം ചേർക്കുക",
+  "menuCategoriesHidden": "മറച്ചത്",
+  "menuCategoriesTileColour": "ടൈലിന്റെ നിറം",
+  "menuCategoriesTileColourHint": "ജീവനക്കാർക്ക് വേഗം കണ്ടെത്താൻ കൗണ്ടറിൽ കാണിക്കും.",
+  "menuCategoriesVisible": "കൗണ്ടറിൽ കാണാം",
+  "menuCategoriesStation": "ഇത് ഉണ്ടാക്കുന്നതാര്",
+  "menuCategoriesStationHint": "ഈ വിഭാഗത്തിന്റെ ഓർഡറുകൾ ആ സ്റ്റേഷനിൽ പ്രിന്റ് ചെയ്യും.",
+  "menuItemOnTheMenu": "മെനുവിലുണ്ട്",
+  "menuItemInStock": "സ്റ്റോക്കിൽ",
+  "menuItemCode": "ഇനം കോഡ്",
+  "menuItemPrepTime": "തയ്യാറെടുപ്പ് സമയം",
+  "modifiersTitle": "മോഡിഫയറുകൾ",
+  "modifiersSubtitle": "ഇനങ്ങളോട് ചേർക്കാവുന്ന തിരഞ്ഞെടുപ്പുകൾ. ഒരിക്കൽ ഉണ്ടാക്കി എവിടെയും ഉപയോഗിക്കുക.",
+  "modifiersNewGroup": "പുതിയ ഗ്രൂപ്പ്",
+  "modifiersNone": "ഇതുവരെ മോഡിഫയർ ഗ്രൂപ്പുകളില്ല",
+  "modifiersCreateFirst": "നിങ്ങളുടെ ആദ്യ ഗ്രൂപ്പ് ഉണ്ടാക്കുക",
+  "modifiersAddOption": "ഓപ്ഷൻ ചേർക്കുക",
+  "modifiersNoOptions": "ഇതുവരെ ഓപ്ഷനുകളില്ല.",
+  "modifiersAllowMoreThanOne": "ഒന്നിലധികം അനുവദിക്കുക",
+  "modifiersMustBeAnswered": "ഉത്തരം നിർബന്ധം",
+  "modifiersMaxSelectable": "തിരഞ്ഞെടുക്കാവുന്ന പരമാവധി",
+  "modifiersPriceChange": "വിലമാറ്റം",
+  "modifiersOffered": "ലഭ്യം",
+  "tablesTitle": "ടേബിളുകൾ",
+  "tablesSubtitle": "നിങ്ങളുടെ ഫ്ലോർ. മുറിയിൽ ഭാഗങ്ങളുണ്ടെങ്കിൽ സോണുകളായി തിരിക്കുക.",
+  "tablesNew": "പുതിയ ടേബിൾ",
+  "tablesNone": "ഇതുവരെ ടേബിളുകളില്ല",
+  "tablesAddFirst": "നിങ്ങളുടെ ആദ്യ ടേബിൾ ചേർക്കുക",
+  "tablesNameOrNumber": "പേരോ നമ്പറോ",
+  "tablesSeats": "സീറ്റുകൾ",
+  "tablesZone": "സോൺ",
+  "tablesInUse": "ഉപയോഗത്തിലാണ്",
+  "tablesCodes": "ടേബിൾ കോഡുകൾ",
+  "tablesCodesNone": "ഇതുവരെ ടേബിളുകൾ ഉപയോഗത്തിലില്ല.",
+  "tablesDeleteConfirm": "{label} മായ്ക്കണോ?",
+  "@tablesDeleteConfirm": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "staffTitle": "ജീവനക്കാർ",
+  "staffSubtitle": "ആർക്കൊക്കെ സൈൻ ഇൻ ചെയ്യാം, അവർക്കെന്ത് അനുമതി.",
+  "staffAddSomeone": "ആരെയെങ്കിലും ചേർക്കുക",
+  "staffNobodyYet": "ഇതുവരെ ആരുമില്ല",
+  "staffCanSignIn": "സൈൻ ഇൻ ചെയ്യാം",
+  "staffWhatTheyCanDo": "അവർക്കെന്ത് ചെയ്യാം",
+  "staffYou": "നിങ്ങൾ",
+  "staffCannotDisableSelf": "നിങ്ങളുടെ അക്കൗണ്ട് നിങ്ങൾക്ക് തന്നെ ഓഫ് ചെയ്യാനാവില്ല.",
+  "staffGiveNewPin": "അവർക്ക് പുതിയ പിൻ നൽകുക",
+  "staffNewPinFor": "{name}-ന് പുതിയ പിൻ",
+  "@staffNewPinFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "staffSetPin": "പിൻ സെറ്റ് ചെയ്യുക",
+  "staffRemoveConfirm": "{name} നീക്കം ചെയ്യണോ?",
+  "@staffRemoveConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reportsTitle": "റിപ്പോർട്ടുകൾ",
+  "reportsSubtitle": "ഓരോ ദിവസത്തെയും കണക്ക്.",
+  "reportsWhatSold": "എന്ത് വിറ്റു",
+  "reportsWhoServedIt": "ആര് വിളമ്പി",
+  "reportsByHour": "മണിക്കൂർ തിരിച്ച്",
+  "reportsExportCsv": "CSV എക്സ്പോർട്ട്",
+  "reportsSaved": "റിപ്പോർട്ട് സേവ് ചെയ്തു.",
+  "reportsCouldNotSave": "സേവ് ചെയ്യാനായില്ല: {error}",
+  "@reportsCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "activityTitle": "പ്രവർത്തനം",
+  "activitySubtitle": "കിഴിവുകൾ, റദ്ദാക്കലുകൾ — ഓരോന്നിനോടും പേര്.",
+  "activityMoneyLeavingOnly": "പുറത്തുപോകുന്ന പണം മാത്രം",
+  "settingsTitle": "ക്രമീകരണങ്ങൾ",
+  "settingsRestaurant": "റെസ്റ്റോറന്റ്",
+  "settingsRestaurantHint": "നിങ്ങളുടെ റെസ്റ്റോറന്റ് സ്വയം എങ്ങനെ അവതരിപ്പിക്കുന്നു, എന്ത് ചാർജ് ചെയ്യുന്നു.",
+  "settingsCharges": "ചാർജുകൾ",
+  "settingsCurrency": "കറൻസി",
+  "settingsTaxRate": "നികുതി നിരക്ക്",
+  "settingsTaxIncluded": "മെനു വിലയിൽ നികുതി ഉൾപ്പെടും",
+  "settingsServiceCharge": "സർവീസ് ചാർജ്",
+  "settingsPrinters": "പ്രിന്ററുകൾ",
+  "settingsReceipts": "രസീതുകൾ",
+  "settingsHeader": "തലക്കെട്ട്",
+  "settingsFooter": "അടിക്കുറിപ്പ്",
+  "settingsServer": "സെർവർ",
+  "settingsThisDevice": "ഈ ഉപകരണം",
+  "settingsAddTablet": "ടാബ്‌ലെറ്റ് ചേർക്കുക",
+  "settingsSignOut": "സൈൻ ഔട്ട്",
+  "settingsDisconnect": "വിച്ഛേദിക്കുക",
+  "settingsDisconnectConfirm": "ഈ ഉപകരണം വിച്ഛേദിക്കണോ?",
+  "printerNew": "പ്രിന്റർ ചേർക്കുക",
+  "printerPaperWidth": "പേപ്പർ വീതി",
+  "printerWhatItPrints": "അത് എന്ത് പ്രിന്റ് ചെയ്യും",
+  "printerInUse": "ഉപയോഗത്തിൽ",
+  "printerRemoveConfirm": "{name} നീക്കം ചെയ്യണോ?",
+  "@printerRemoveConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "guestScanTitle": "ഓർഡറിനായി സ്കാൻ ചെയ്യുക",
+  "guestMenuTitle": "മെനു",
+  "signInErrorNoUsername": "നിങ്ങളുടെ യൂസർനേം നൽകുക.",
+  "signInErrorShortPin": "നിങ്ങളുടെ പിൻ കുറഞ്ഞത് 4 അക്കങ്ങൾ.",
+  "ticketSendCourseOnly": "{course} മാത്രം അയയ്ക്കുക",
+  "@ticketSendCourseOnly": {
+    "placeholders": {
+      "course": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketBackToFloor": "ഫ്ലോറിലേക്ക് മടങ്ങുക",
+  "ticketCouldNotSend": "അയയ്ക്കാനായില്ല: {error}",
+  "@ticketCouldNotSend": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketCouldNotCancel": "റദ്ദാക്കാനായില്ല: {error}",
+  "@ticketCouldNotCancel": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketEmptyBill": "ഈ ബില്ലിൽ ഇതുവരെ ഒന്നുമില്ല",
+  "ticketVoided": "റദ്ദാക്കി",
+  "ticketSavedNotSent": "ഇവിടെ സേവ് ചെയ്തു — ഇതുവരെ അയച്ചിട്ടില്ല",
+  "ticketQuantity": "അളവ്",
+  "ticketCourse": "കോഴ്സ്",
+  "ticketRetry": "വീണ്ടും ശ്രമം",
+  "kdsStatusQueued": "ക്യൂവിൽ",
+  "kdsStatusPreparing": "തയ്യാറாகുന്നു",
+  "kdsStatusReady": "തയ്യാർ",
+  "outletTitle": "ഔട്ട്ലെറ്റ്",
+  "outletSwitch": "ഔട്ട്ലെറ്റ് മാറ്റുക",
+  "outletAll": "എല്ലാ ഔട്ട്ലെറ്റുകളും",
+  "settingsLanguage": "ഭാഷ",
+  "settingsLanguageHint": "ഈ ഉപകരണത്തിന്റെ ഭാഷ",
+  "floorNoTablesHint": "മാനേജർക്ക് ഫ്ലോർ → ടേബിളുകളിൽ ടേബിളുകൾ ചേർക്കാം. അതുവരെ നിങ്ങൾക്ക് ടേക്ക് എവേ ഓർഡറുകൾ എടുക്കാം.",
+  "splitOwnBill": "അല്ലെങ്കിൽ ആർക്കെങ്കിലും അവരുടെ സ്വന്തം ബിൽ നൽകുക",
+  "splitSeparateTax": "ഓരോ ബില്ലിലും സർവീസ് ചാർജും നികുതിയും വെവ്വേറെ കണക്കാക്കും.",
+  "splitEvenTitle": "എല്ലാവരും അവരവരുടെ വിഹിതം അടയ്ക്കുക",
+  "splitEvenHint": "ഒരു ബിൽ, തുല്യമായി വിഭജിക്കുക. ഓരോ വിഹിതവും പ്രത്യേക പേയ്മെന്റായി വാങ്ങുക.",
+  "kdsEmptyHint": "കൗണ്ടർ അയച്ചയുടൻ ടിക്കറ്റുകൾ ഇവിടെ കാണാം.",
+  "settingsLanguageSystem": "ഉപകരണ ഭാഷ",
+  "invTitle": "സ്റ്റോക്ക്",
+  "@invTitle": {
+    "description": "Inventory section title"
+  },
+  "invSubtitle": "കയ്യിലുള്ള സ്റ്റോക്ക്, അതിന്റെ വില, എന്ത് വീണ്ടും വാങ്ങണം.",
+  "@invSubtitle": {
+    "description": "Inventory section subtitle"
+  },
+  "invNewItem": "പുതിയ ഇനം",
+  "@invNewItem": {
+    "description": "New stock item button"
+  },
+  "invStockValue": "സ്റ്റോക്ക് മൂല്യം",
+  "@invStockValue": {
+    "description": "Total stock value label"
+  },
+  "invLowStock": "കുറഞ്ഞ സ്റ്റോക്ക്",
+  "@invLowStock": {
+    "description": "Low stock section header"
+  },
+  "invLastRestock": "അവസാന വാങ്ങൽ {date}",
+  "@invLastRestock": {
+    "description": "Last restock date, {date} placeholder",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "invNeedsReview": "അവലോകനം വേണം",
+  "@invNeedsReview": {
+    "description": "Needs review flag"
+  },
+  "invLow": "കുറവ്",
+  "@invLow": {
+    "description": "Low badge"
+  },
+  "invBalance": "ബാക്കി",
+  "@invBalance": {
+    "description": "Current balance label"
+  },
+  "invThreshold": "വീണ്ടും വാങ്ങേണ്ട നില",
+  "@invThreshold": {
+    "description": "Reorder threshold label"
+  },
+  "invUnit": "യൂണിറ്റ്",
+  "@invUnit": {
+    "description": "Unit label (kg, L, pcs)"
+  },
+  "invCostPerUnit": "{unit}ന് വില",
+  "@invCostPerUnit": {
+    "description": "Cost per unit, {unit} placeholder",
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "invActive": "സജീവം",
+  "@invActive": {
+    "description": "Active switch label"
+  },
+  "invPurchase": "വാങ്ങൽ",
+  "@invPurchase": {
+    "description": "Purchase action"
+  },
+  "invWastage": "പാഴാക്കൽ",
+  "@invWastage": {
+    "description": "Wastage action"
+  },
+  "invAdjust": "ക്രമീകരണം",
+  "@invAdjust": {
+    "description": "Adjust action"
+  },
+  "invQuantity": "അളവ്",
+  "@invQuantity": {
+    "description": "Quantity field label"
+  },
+  "invNote": "കുറിപ്പ്",
+  "@invNote": {
+    "description": "Note field label"
+  },
+  "invEmpty": "ഇതുവരെ സ്റ്റോക്ക് ഇനങ്ങളില്ല",
+  "@invEmpty": {
+    "description": "Empty inventory title"
+  },
+  "invEmptyHint": "മാവ്, പാൽ, ചിക്കൻ ചേർക്കുക — അടുക്കളയിലുള്ളത്.",
+  "@invEmptyHint": {
+    "description": "Empty inventory hint"
+  },
+  "invRecipe": "പാചകക്കുറിപ്പ്",
+  "@invRecipe": {
+    "description": "Recipe section title"
+  },
+  "invRecipeHint": "ഓരോ സെർവിംഗിനും എന്ത് വേണം. വിളമ്പുമ്പോൾ തനിയെ കുറയും.",
+  "@invRecipeHint": {
+    "description": "Recipe section hint"
+  },
+  "invAddIngredient": "ചേരുവ ചേർക്കുക",
+  "@invAddIngredient": {
+    "description": "Add ingredient button"
+  },
+  "invQtyPerServing": "ഒരു സെർവിംഗിന്",
+  "@invQtyPerServing": {
+    "description": "Quantity per serving label"
+  },
+  "invSaveItemFirst": "ആദ്യം ഇനം സേവ് ചെയ്യുക, പിന്നീട് പാചകക്കുറിപ്പ് ചേർക്കുക.",
+  "@invSaveItemFirst": {
+    "description": "Recipe on unsaved item hint"
+  },
+  "invPurchaseTitle": "വാങ്ങൽ രേഖപ്പെടുത്തുക",
+  "@invPurchaseTitle": {
+    "description": "Purchase dialog title"
+  },
+  "invWastageTitle": "പാഴാക്കൽ രേഖപ്പെടുത്തുക",
+  "@invWastageTitle": {
+    "description": "Wastage dialog title"
+  },
+  "invAdjustTitle": "സ്റ്റോക്ക് ക്രമീകരിക്കുക",
+  "@invAdjustTitle": {
+    "description": "Adjust dialog title"
+  },
+  "invAdjustHint": "ഓഡിറ്റ് ചെയ്ത തിരുത്തലുകൾ — ഉദാ. എണ്ണത്തിലെ വ്യത്യാസം.",
+  "@invAdjustHint": {
+    "description": "Adjust dialog hint"
+  },
+  "invPickIngredient": "ചേരുവ തിരഞ്ഞെടുക്കുക",
+  "@invPickIngredient": {
+    "description": "Pick ingredient dialog title"
+  },
+  "invEdit": "തിരുത്തുക",
+  "@invEdit": {
+    "description": "Edit action"
+  }
+}

@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Order online</title>
+<style>
+/* dineos online ordering. One file, no framework, no web font — a customer
+   on a phone waits for every kilobyte. Light theme only: warm paper, ink
+   text, one confident deep-green accent. */
+:root {
+  --paper: #FAF7F1; --surface: #FFFFFF; --sunken: #F3EEE5;
+  --border: #E8E0D2; --border-strong: #D8CCB4;
+  --text: #211D16; --muted: #6B6257; --faint: #9A9081;
+  --brand: #17603F; --brand-deep: #0F4A30; --brand-soft: #E3EFE7; --on-brand: #FFFFFF;
+  --danger: #B3261E; --warn-bg: #FFF4E0; --warn-text: #8A5A00;
+  --radius: 16px; --shadow: 0 1px 2px rgba(33,29,22,.07), 0 10px 30px rgba(33,29,22,.08);
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper); color: var(--text);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding-bottom: env(safe-area-inset-bottom);
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 640px; margin: 0 auto; }
+.pad { padding: 0 18px; }
+.serif { font-family: Georgia, "Times New Roman", serif; }
+
+.hero { padding: 26px 18px 14px; }
+.hero .kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--brand); }
+.hero h1 { margin: 6px 0 2px; font-size: 30px; line-height: 1.15; letter-spacing: -.5px; }
+.hero .sub { color: var(--muted); font-size: 14px; }
+.controls { display: flex; gap: 8px; padding: 12px 18px 0; flex-wrap: wrap; }
+.controls label { font-size: 12px; font-weight: 700; color: var(--muted); align-self: center; }
+.controls select {
+  font: inherit; font-size: 13px; font-weight: 600; padding: 8px 10px; border-radius: 10px;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--text);
+  max-width: 200px;
+}
+
+.testbanner {
+  margin: 0 18px 6px; padding: 10px 14px; border-radius: 12px;
+  background: var(--warn-bg); color: var(--warn-text); font-size: 13px; font-weight: 600;
+  border: 1px dashed var(--warn-text);
+}
+
+.type-toggle { display: flex; gap: 6px; padding: 12px 18px 4px; }
+.type-toggle button {
+  flex: 1; font: inherit; font-weight: 700; padding: 11px; border-radius: 12px; cursor: pointer;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+}
+.type-toggle button[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+
+.search { padding: 10px 18px 2px; }
+.search input {
+  width: 100%; font: inherit; padding: 11px 14px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+
+nav { position: sticky; top: 0; z-index: 5; background: var(--paper); padding: 10px 0 8px; overflow-x: auto; scrollbar-width: none; }
+nav::-webkit-scrollbar { display: none; }
+nav .row { display: flex; gap: 8px; padding: 0 18px; width: max-content; }
+nav button {
+  font: inherit; font-weight: 600; white-space: nowrap; padding: 9px 16px; border-radius: 999px; cursor: pointer;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+}
+nav button[aria-selected="true"] { background: var(--brand); color: var(--on-brand); border-color: var(--brand); }
+
+.card {
+  display: flex; gap: 14px; width: 100%; text-align: left; font: inherit;
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px; margin: 0 18px 10px; width: calc(100% - 36px); cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.card:disabled { opacity: .55; cursor: default; box-shadow: none; }
+.card img { width: 76px; height: 76px; object-fit: cover; border-radius: 12px; flex: none; background: var(--sunken); }
+.card .grow { flex: 1; min-width: 0; }
+.card .name { display: block; font-weight: 700; font-size: 16px; }
+.card .desc { display: block; color: var(--muted); font-size: 13px; margin-top: 3px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card .price { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--brand-deep); }
+.card .soldout { font-size: 11px; font-weight: 700; letter-spacing: .4px; color: var(--danger); text-transform: uppercase; }
+
+#bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 6;
+  transform: translateY(110%); transition: transform .25s ease;
+  padding: 12px 18px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(250,247,241,.92); backdrop-filter: blur(8px);
+}
+#bar.up { transform: none; }
+#bar button {
+  width: 100%; max-width: 640px; margin: 0 auto; display: flex;
+  font: inherit; font-weight: 700; font-size: 16px; color: var(--on-brand);
+  background: var(--brand); border: 0; border-radius: 14px; padding: 15px 18px; cursor: pointer;
+  justify-content: space-between; align-items: center;
+}
+#bar button:active { background: var(--brand-deep); }
+
+dialog { border: 0; border-radius: 20px 20px 0 0; padding: 0; margin: auto 0 0; width: 100%; max-width: 640px;
+  background: var(--paper); color: var(--text); max-height: 92dvh; }
+dialog::backdrop { background: rgba(33,29,22,.45); }
+.sheet-body { padding: 22px 20px calc(20px + env(safe-area-inset-bottom)); overflow-y: auto; max-height: 92dvh; }
+.sheet-body h2 { margin: 0 0 4px; font-size: 22px; letter-spacing: -.3px; }
+.sheet-body .sub { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+fieldset { border: 1px solid var(--border); border-radius: 12px; margin: 0 0 12px; padding: 10px 12px 12px; }
+legend { font-weight: 700; font-size: 13px; padding: 0 6px; }
+.req { color: var(--danger); font-size: 11px; margin-left: 6px; }
+.optlbl { color: var(--faint); font-size: 11px; margin-left: 6px; font-weight: 400; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.opt-btn {
+  font: inherit; font-size: 13px; font-weight: 600; padding: 8px 12px; border-radius: 999px; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--border-strong); color: var(--text);
+}
+.opt-btn[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+.opt-btn .delta { opacity: .75; font-weight: 400; margin-left: 4px; }
+.field { display: block; margin: 12px 0 4px; font-weight: 700; font-size: 13px; }
+input[type="text"], input[type="tel"], textarea {
+  width: 100%; font: inherit; padding: 11px 13px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+.qty { display: flex; align-items: center; gap: 16px; margin: 14px 0; }
+.qty button {
+  width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border-strong);
+  background: var(--surface); font-size: 20px; cursor: pointer; color: var(--text);
+}
+.qty span { font-size: 18px; font-weight: 700; min-width: 24px; text-align: center; font-variant-numeric: tabular-nums; }
+.primary {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  font: inherit; font-weight: 700; font-size: 16px; color: var(--on-brand);
+  background: var(--brand); border: 0; border-radius: 14px; padding: 15px 18px; cursor: pointer; margin-top: 6px;
+}
+.primary:disabled { opacity: .5; cursor: default; }
+.primary:active:not(:disabled) { background: var(--brand-deep); }
+.ghost {
+  width: 100%; font: inherit; font-weight: 600; color: var(--muted);
+  background: transparent; border: 0; padding: 12px; cursor: pointer; margin-top: 2px;
+}
+.line { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.line .q { font-weight: 700; color: var(--brand-deep); min-width: 34px; }
+.line .mods, .line .note { font-size: 12px; color: var(--muted); }
+.line .tnum { margin-left: auto; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.line button { border: 0; background: none; color: var(--faint); font-size: 20px; cursor: pointer; padding: 0 2px; }
+.total { display: flex; justify-content: space-between; font-weight: 700; font-size: 17px; padding: 12px 0 4px; }
+.payopts { display: grid; gap: 8px; margin-top: 8px; }
+.payopt {
+  display: flex; align-items: center; gap: 12px; text-align: left; font: inherit;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 13px 14px; cursor: pointer;
+}
+.payopt[aria-pressed="true"] { border-color: var(--brand); box-shadow: 0 0 0 1px var(--brand); }
+.payopt .t { font-weight: 700; }
+.payopt .d { font-size: 12px; color: var(--muted); }
+#msg { color: var(--danger); font-size: 13px; margin-top: 10px; min-height: 20px; }
+.done { text-align: center; padding: 30px 10px; }
+.done .tick {
+  width: 72px; height: 72px; border-radius: 50%; background: var(--brand-soft); color: var(--brand-deep);
+  font-size: 34px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
+}
+.done .ordnum { font-size: 40px; font-weight: 800; letter-spacing: 2px; color: var(--brand-deep); margin: 8px 0; }
+.foot { text-align: center; color: var(--faint); font-size: 12px; padding: 26px 18px 90px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="kicker" id="kicker"></div>
+    <h1 class="serif" id="rname">…</h1>
+    <div class="sub" id="rsub"></div>
+  </div>
+  <div class="controls">
+    <span id="outletwrap" hidden><label for="outletsel" id="outletlbl"></label> <select id="outletsel"></select></span>
+    <span><label for="langsel" id="langlbl"></label> <select id="langsel"></select></span>
+  </div>
+  <div class="testbanner" id="testbanner" hidden></div>
+
+  <div class="type-toggle" role="group" id="typetoggle">
+    <button id="t-pickup" aria-pressed="true"></button>
+    <button id="t-delivery" aria-pressed="false"></button>
+  </div>
+
+  <div class="search"><input type="text" id="q" autocomplete="off"></div>
+  <nav><div class="row" id="cats"></div></nav>
+  <main id="menu" style="padding-top:6px"></main>
+  <div class="foot" id="foot"></div>
+</div>
+
+<div id="bar"><button id="review"><span id="review-count"></span><span id="review-total"></span></button></div>
+
+<dialog id="sheet"><div class="sheet-body" id="sheet-body"></div></dialog>
+
+<script>
+"use strict";
+const STRINGS = {
+  "en": {
+    "orderOnline": "Order online",
+    "loadingMenu": "Loading the menu…",
+    "noServer": "Could not reach the restaurant server.",
+    "orderingDisabled": "Online ordering",
+    "disabledMsg": "This restaurant is not taking online orders right now.",
+    "pickupDelivery": "Pickup & delivery · pay online or at the counter",
+    "menuUnavailable": "The menu is not available yet.",
+    "testMode": "TEST MODE — payments are simulated. No real money moves.",
+    "pickup": "Pickup",
+    "delivery": "Delivery",
+    "searchMenu": "Search the menu…",
+    "all": "All",
+    "soldOut": "Sold out",
+    "noMatch": "Nothing on the menu matches.",
+    "footer": "Prices include taxes as shown at checkout. The kitchen starts your order the moment you place it.",
+    "somethingWrong": "Something went wrong.",
+    "required": "Required",
+    "optional": "Optional",
+    "kitchenNote": "Anything the kitchen should know?",
+    "kitchenNotePh": "Allergy, no onions, well done",
+    "fewer": "Fewer",
+    "more": "More",
+    "addToOrder": "Add to order",
+    "cancel": "Cancel",
+    "checkout": "Checkout",
+    "total": "Total",
+    "taxIncluded": "Taxes are included in the total shown by the restaurant.",
+    "yourName": "Your name",
+    "fullName": "Full name",
+    "phone": "Phone",
+    "phonePh": "For order updates",
+    "deliveryAddress": "Delivery address",
+    "addressPh": "Flat, street, landmark",
+    "payment": "Payment",
+    "payAtCounter": "Pay at the counter",
+    "cashOnDelivery": "Cash or UPI on delivery",
+    "cashAtPickup": "Cash, card or UPI at pickup",
+    "upiCards": "UPI, cards, netbanking",
+    "cardStripe": "Credit & debit cards",
+    "test": "TEST",
+    "placeOrder": "Place order",
+    "keepBrowsing": "Keep browsing",
+    "needName": "Please give a name for the order.",
+    "needPhone": "Please give a reachable phone number.",
+    "needAddress": "A delivery address is needed.",
+    "cardPayment": "Card payment",
+    "processing": "Processing…",
+    "payNow": "Pay now",
+    "back": "Back",
+    "orderPlaced": "Order placed",
+    "done": "Done",
+    "payFormFailed": "Could not load the payment form. Your order is saved — pay at pickup.",
+    "payIncomplete": "Your order is saved. Complete payment at pickup if it did not go through.",
+    "showOrderNum": "Show this order number at the counter.",
+    "payReceived": "Payment received — the kitchen has your order.",
+    "chooseOutlet": "Choose outlet",
+    "language": "Language",
+    "reviewOne": "Review 1 item",
+    "reviewMany": "Review {n} items",
+    "upToN": "up to {n}",
+    "chooseX": "Choose {name}",
+    "itemsN": "{n} items",
+    "payOnDelivery": "Pay {total} on delivery.",
+    "payAtPickup": "Pay {total} at pickup.",
+  },
+  "hi": {
+    "orderOnline": "ऑनलाइन ऑर्डर करें",
+    "loadingMenu": "मेनू लोड हो रहा है…",
+    "noServer": "रेस्तरां के सर्वर से संपर्क नहीं हो सका।",
+    "orderingDisabled": "ऑनलाइन ऑर्डरिंग",
+    "disabledMsg": "यह रेस्तरां अभी ऑनलाइन ऑर्डर नहीं ले रहा है।",
+    "pickupDelivery": "पिकअप और डिलीवरी · ऑनलाइन या काउंटर पर भुगतान करें",
+    "menuUnavailable": "मेनू अभी उपलब्ध नहीं है।",
+    "testMode": "टेस्ट मोड — भुगतान नकली हैं। असली पैसे नहीं लगेंगे।",
+    "pickup": "पिकअप",
+    "delivery": "डिलीवरी",
+    "searchMenu": "मेनू में खोजें…",
+    "all": "सभी",
+    "soldOut": "खत्म",
+    "noMatch": "मेनू में कुछ मेल नहीं खाता।",
+    "footer": "चेकआउट पर दिखाए गए कर कीमतों में शामिल हैं। ऑर्डर करते ही रसोई शुरू कर देती है।",
+    "somethingWrong": "कुछ गड़बड़ हो गई।",
+    "required": "ज़रूरी",
+    "optional": "वैकल्पिक",
+    "kitchenNote": "रसोई को कुछ बताना है?",
+    "kitchenNotePh": "एलर्जी, बिना प्याज़, अच्छी तरह पका हुआ",
+    "fewer": "कम",
+    "more": "ज़्यादा",
+    "addToOrder": "ऑर्डर में जोड़ें",
+    "cancel": "रद्द करें",
+    "checkout": "चेकआउट",
+    "total": "कुल",
+    "taxIncluded": "रेस्तरां द्वारा दिखाए गए कुल में कर शामिल हैं।",
+    "yourName": "आपका नाम",
+    "fullName": "पूरा नाम",
+    "phone": "फोन",
+    "phonePh": "ऑर्डर अपडेट के लिए",
+    "deliveryAddress": "डिलीवरी का पता",
+    "addressPh": "फ्लैट, गली, निशान",
+    "payment": "भुगतान",
+    "payAtCounter": "काउंटर पर भुगतान करें",
+    "cashOnDelivery": "डिलीवरी पर नकद या UPI",
+    "cashAtPickup": "पिकअप पर नकद, कार्ड या UPI",
+    "upiCards": "UPI, कार्ड, नेटबैंकिंग",
+    "cardStripe": "क्रेडिट और डेबिट कार्ड",
+    "test": "टेस्ट",
+    "placeOrder": "ऑर्डर करें",
+    "keepBrowsing": "और देखें",
+    "needName": "ऑर्डर के लिए नाम दें।",
+    "needPhone": "संपर्क हो सकने वाला फोन नंबर दें।",
+    "needAddress": "डिलीवरी का पता चाहिए।",
+    "cardPayment": "कार्ड से भुगतान",
+    "processing": "प्रोसेस हो रहा है…",
+    "payNow": "अभी भुगतान करें",
+    "back": "वापस",
+    "orderPlaced": "ऑर्डर हो गया",
+    "done": "हो गया",
+    "payFormFailed": "पेमेंट फॉर्म नहीं खुल सका। आपका ऑर्डर सहेज लिया गया है — पिकअप पर भुगतान करें।",
+    "payIncomplete": "आपका ऑर्डर सहेज लिया गया है। अगर भुगतान नहीं हुआ तो पिकअप पर पूरा करें।",
+    "showOrderNum": "काउंटर पर यह ऑर्डर नंबर दिखाएं।",
+    "payReceived": "भुगतान मिल गया — रसोई को आपका ऑर्डर मिल गया है।",
+    "chooseOutlet": "आउटलेट चुनें",
+    "language": "भाषा",
+    "reviewOne": "1 आइटम देखें",
+    "reviewMany": "{n} आइटम देखें",
+    "upToN": "{n} तक",
+    "chooseX": "{name} चुनें",
+    "itemsN": "{n} आइटम",
+    "payOnDelivery": "डिलीवरी पर {total} दें।",
+    "payAtPickup": "पिकअप पर {total} दें।",
+  },
+  "ta": {
+    "orderOnline": "ஆன்லைனில் ஆர்டர்",
+    "loadingMenu": "மெனு ஏற்றப்படுகிறது…",
+    "noServer": "உணவக சேவையகத்தை அடைய முடியவில்லை.",
+    "orderingDisabled": "ஆன்லைன் ஆர்டர்",
+    "disabledMsg": "இந்த உணவகம் தற்போது ஆன்லைன் ஆர்டர்களை எடுக்கவில்லை.",
+    "pickupDelivery": "எடுத்துச் செல் & டெலிவரி · ஆன்லைனில் அல்லது கல்லாவில் செலுத்துங்கள்",
+    "menuUnavailable": "மெனு இன்னும் கிடைக்கவில்லை.",
+    "testMode": "சோதனை முறை — கட்டணங்கள் போலியானவை. உண்மையான பணம் செல்லாது.",
+    "pickup": "எடுத்துச் செல்",
+    "delivery": "டெலிவரி",
+    "searchMenu": "மெனுவில் தேடு…",
+    "all": "அனைத்தும்",
+    "soldOut": "தீர்ந்துவிட்டது",
+    "noMatch": "மெனுவில் பொருந்துவது எதுவும் இல்லை.",
+    "footer": "செக்அவுட்டில் காட்டப்படும் வரி விலையில் அடங்கும். நீங்கள் ஆர்டர் செய்ததும் சமையலறை தொடங்கும்.",
+    "somethingWrong": "ஏதோ தவறு நடந்தது.",
+    "required": "கட்டாயம்",
+    "optional": "விருப்பம்",
+    "kitchenNote": "சமையலறைக்கு ஏதாவது சொல்ல வேண்டுமா?",
+    "kitchenNotePh": "ஒவ்வாமை, வெங்காயம் வேண்டாம், நன்கு வேகவைத்தது",
+    "fewer": "குறை",
+    "more": "மேலும்",
+    "addToOrder": "ஆர்டரில் சேர்",
+    "cancel": "ரத்து செய்",
+    "checkout": "செக்அவுட்",
+    "total": "மொத்தம்",
+    "taxIncluded": "உணவகம் காட்டும் மொத்தத்தில் வரி அடங்கும்.",
+    "yourName": "உங்கள் பெயர்",
+    "fullName": "முழு பெயர்",
+    "phone": "தொலைபேசி",
+    "phonePh": "ஆர்டர் தகவலுக்கு",
+    "deliveryAddress": "டெலிவரி முகவரி",
+    "addressPh": "பிளாட், தெரு, அடையாளம்",
+    "payment": "கட்டணம்",
+    "payAtCounter": "கல்லாவில் செலுத்துங்கள்",
+    "cashOnDelivery": "டெலிவரியில் ரொக்கம் அல்லது UPI",
+    "cashAtPickup": "எடுத்துச் செல்லும்போது ரொக்கம், அட்டை அல்லது UPI",
+    "upiCards": "UPI, அட்டைகள், நெட்பேங்கிங்",
+    "cardStripe": "கிரெடிட் & டெபிட் அட்டைகள்",
+    "test": "சோதனை",
+    "placeOrder": "ஆர்டர் செய்",
+    "keepBrowsing": "மேலும் பார்",
+    "needName": "ஆர்டருக்கு ஒரு பெயர் கொடுங்கள்.",
+    "needPhone": "தொடர்பு கொள்ளக்கூடிய தொலைபேசி எண் கொடுங்கள்.",
+    "needAddress": "டெலிவரி முகவரி தேவை.",
+    "cardPayment": "அட்டை கட்டணம்",
+    "processing": "செயலாக்கப்படுகிறது…",
+    "payNow": "இப்போது செலுத்து",
+    "back": "பின்",
+    "orderPlaced": "ஆர்டர் செய்யப்பட்டது",
+    "done": "முடிந்தது",
+    "payFormFailed": "கட்டணப் படிவத்தை ஏற்ற முடியவில்லை. உங்கள் ஆர்டர் சேமிக்கப்பட்டது — எடுத்துச் செல்லும்போது செலுத்துங்கள்.",
+    "payIncomplete": "உங்கள் ஆர்டர் சேமிக்கப்பட்டது. கட்டணம் செல்லவில்லை என்றால் எடுத்துச் செல்லும்போது முடியுங்கள்.",
+    "showOrderNum": "கல்லாவில் இந்த ஆர்டர் எண்ணைக் காட்டுங்கள்.",
+    "payReceived": "கட்டணம் பெறப்பட்டது — சமையலறைக்கு உங்கள் ஆர்டர் கிடைத்தது.",
+    "chooseOutlet": "கிளையைத் தேர்வு",
+    "language": "மொழி",
+    "reviewOne": "1 உருப்படியைப் பார்",
+    "reviewMany": "{n} உருப்படிகளைப் பார்",
+    "upToN": "{n} வரை",
+    "chooseX": "{name}-ஐத் தேர்வு",
+    "itemsN": "{n} உருப்படிகள்",
+    "payOnDelivery": "டெலிவரியில் {total} கொடுங்கள்.",
+    "payAtPickup": "எடுத்துச் செல்லும்போது {total} கொடுங்கள்.",
+  },
+  "te": {
+    "orderOnline": "ఆన్‌లైన్‌లో ఆర్డర్ చేయండి",
+    "loadingMenu": "మెనూ లోడ్ అవుతోంది…",
+    "noServer": "రెస్టారెంట్ సర్వర్‌ను చేరుకోలేకపోయింది.",
+    "orderingDisabled": "ఆన్‌లైన్ ఆర్డరింగ్",
+    "disabledMsg": "ఈ రెస్టారెంట్ ప్రస్తుతం ఆన్‌లైన్ ఆర్డర్లు తీసుకోవడం లేదు.",
+    "pickupDelivery": "పికప్ & డెలివరీ · ఆన్‌లైన్‌లో లేదా కౌంటర్ వద్ద చెల్లించండి",
+    "menuUnavailable": "మెనూ ఇంకా అందుబాటులో లేదు.",
+    "testMode": "టెస్ట్ మోడ్ — చెల్లింపులు నకిలీవి. నిజమైన డబ్బు కదలదు.",
+    "pickup": "పికప్",
+    "delivery": "డెలివరీ",
+    "searchMenu": "మెనూలో వెతకండి…",
+    "all": "అన్నీ",
+    "soldOut": "అయిపోయింది",
+    "noMatch": "మెనూలో సరిపోలేదు.",
+    "footer": "చెక్‌అవుట్‌లో చూపే పన్ను ధరలో కలిసి ఉంటుంది. మీరు ఆర్డర్ చేయగానే వంటగది మొదలవుతుంది.",
+    "somethingWrong": "ఏదో తప్పు జరిగింది.",
+    "required": "తప్పనిసరి",
+    "optional": "ఐచ్ఛికం",
+    "kitchenNote": "వంటగదికి ఏదైనా చెప్పాలా?",
+    "kitchenNotePh": "అలర్జీ, ఉల్లిపాయలు వద్దు, బాగా ఉడికించినది",
+    "fewer": "తక్కువ",
+    "more": "మరిన్ని",
+    "addToOrder": "ఆర్డర్‌లో జోడించు",
+    "cancel": "రద్దు చేయి",
+    "checkout": "చెక్‌అవుట్",
+    "total": "మొత్తం",
+    "taxIncluded": "రెస్టారెంట్ చూపే మొత్తంలో పన్ను కలిసి ఉంది.",
+    "yourName": "మీ పేరు",
+    "fullName": "పూర్తి పేరు",
+    "phone": "ఫోన్",
+    "phonePh": "ఆర్డర్ సమాచారం కోసం",
+    "deliveryAddress": "డెలివరీ చిరునామా",
+    "addressPh": "ఫ్లాట్, వీధి, గుర్తు",
+    "payment": "చెల్లింపు",
+    "payAtCounter": "కౌంటర్ వద్ద చెల్లించండి",
+    "cashOnDelivery": "డెలివరీపై నగదు లేదా UPI",
+    "cashAtPickup": "పికప్ వద్ద నగదు, కార్డు లేదా UPI",
+    "upiCards": "UPI, కార్డులు, నెట్‌బ్యాంకింగ్",
+    "cardStripe": "క్రెడిట్ & డెబిట్ కార్డులు",
+    "test": "టెస్ట్",
+    "placeOrder": "ఆర్డర్ చేయి",
+    "keepBrowsing": "మరిన్ని చూడు",
+    "needName": "ఆర్డర్ కోసం పేరు ఇవ్వండి.",
+    "needPhone": "సంప్రదించగల ఫోన్ నంబర్ ఇవ్వండి.",
+    "needAddress": "డెలివరీ చిరునామా అవసరం.",
+    "cardPayment": "కార్డు చెల్లింపు",
+    "processing": "ప్రాసెస్ అవుతోంది…",
+    "payNow": "ఇప్పుడే చెల్లించు",
+    "back": "వెనుకకు",
+    "orderPlaced": "ఆర్డర్ చేయబడింది",
+    "done": "అయింది",
+    "payFormFailed": "చెల్లింపు ఫారం లోడ్ కాలేదు. మీ ఆర్డర్ సేవ్ అయింది — పికప్ వద్ద చెల్లించండి.",
+    "payIncomplete": "మీ ఆర్డర్ సేవ్ అయింది. చెల్లింపు జరగకపోతే పికప్ వద్ద పూర్తి చేయండి.",
+    "showOrderNum": "కౌంటర్ వద్ద ఈ ఆర్డర్ నంబర్ చూపండి.",
+    "payReceived": "చెల్లింపు అందింది — వంటగదికి మీ ఆర్డర్ అందింది.",
+    "chooseOutlet": "అవుట్‌లెట్ ఎంచుకోండి",
+    "language": "భాష",
+    "reviewOne": "1 ఐటమ్ చూడు",
+    "reviewMany": "{n} ఐటమ్‌లు చూడు",
+    "upToN": "{n} వరకు",
+    "chooseX": "{name} ఎంచుకో",
+    "itemsN": "{n} ఐటమ్‌లు",
+    "payOnDelivery": "డెలివరీపై {total} ఇవ్వండి.",
+    "payAtPickup": "పికప్ వద్ద {total} ఇవ్వండి.",
+  },
+  "kn": {
+    "orderOnline": "ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಆರ್ಡರ್ ಮಾಡಿ",
+    "loadingMenu": "ಮೆನು ಲೋಡ್ ಆಗುತ್ತಿದೆ…",
+    "noServer": "ರೆಸ್ಟೋರೆಂಟ್ ಸರ್ವರ್ ತಲುಪಲಾಗಲಿಲ್ಲ.",
+    "orderingDisabled": "ಆನ್‌ಲೈನ್ ಆರ್ಡರಿಂಗ್",
+    "disabledMsg": "ಈ ರೆಸ್ಟೋರೆಂಟ್ ಈಗ ಆನ್‌ಲೈನ್ ಆರ್ಡರ್‌ಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತಿಲ್ಲ.",
+    "pickupDelivery": "ಪಿಕಪ್ & ಡೆಲಿವರಿ · ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಅಥವಾ ಕೌಂಟರ್‌ನಲ್ಲಿ ಪಾವತಿಸಿ",
+    "menuUnavailable": "ಮೆನು ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.",
+    "testMode": "ಪರೀಕ್ಷಾ ಕ್ರಮ — ಪಾವತಿಗಳು ಅನುಕರಣೆ. ನಿಜವಾದ ಹಣ ಚಲಿಸುವುದಿಲ್ಲ.",
+    "pickup": "ಪಿಕಪ್",
+    "delivery": "ಡೆಲಿವರಿ",
+    "searchMenu": "ಮೆನುವಿನಲ್ಲಿ ಹುಡುಕಿ…",
+    "all": "ಎಲ್ಲಾ",
+    "soldOut": "ಖಾಲಿಯಾಗಿದೆ",
+    "noMatch": "ಮೆನುವಿನಲ್ಲಿ ಹೊಂದಾಣಿಕೆಯಾಗಲಿಲ್ಲ.",
+    "footer": "ಚೆಕ್‌ಔಟ್‌ನಲ್ಲಿ ತೋರಿಸುವ ತೆರಿಗೆ ಬೆಲೆಯಲ್ಲಿ ಸೇರಿದೆ. ನೀವು ಆರ್ಡರ್ ಮಾಡಿದ ಕೂಡಲೇ ಅಡುಗೆಮನೆ ಪ್ರಾರಂಭಿಸುತ್ತದೆ.",
+    "somethingWrong": "ಏನೋ ತಪ್ಪಾಗಿದೆ.",
+    "required": "ಕಡ್ಡಾಯ",
+    "optional": "ಐಚ್ಛಿಕ",
+    "kitchenNote": "ಅಡುಗೆಮನೆಗೆ ಏನಾದರೂ ಹೇಳಬೇಕೇ?",
+    "kitchenNotePh": "ಅಲರ್ಜಿ, ಈರುಳ್ಳಿ ಬೇಡ, ಚೆನ್ನಾಗಿ ಬೇಯಿಸಿದ್ದು",
+    "fewer": "ಕಡಿಮೆ",
+    "more": "ಹೆಚ್ಚು",
+    "addToOrder": "ಆರ್ಡರ್‌ಗೆ ಸೇರಿಸಿ",
+    "cancel": "ರದ್ದುಮಾಡಿ",
+    "checkout": "ಚೆಕ್‌ಔಟ್",
+    "total": "ಒಟ್ಟು",
+    "taxIncluded": "ರೆಸ್ಟೋರೆಂಟ್ ತೋರಿಸುವ ಒಟ್ಟಿನಲ್ಲಿ ತೆರಿಗೆ ಸೇರಿದೆ.",
+    "yourName": "ನಿಮ್ಮ ಹೆಸರು",
+    "fullName": "ಪೂರ್ಣ ಹೆಸರು",
+    "phone": "ಫೋನ್",
+    "phonePh": "ಆರ್ಡರ್ ಮಾಹಿತಿಗಾಗಿ",
+    "deliveryAddress": "ಡೆಲಿವರಿ ವಿಳಾಸ",
+    "addressPh": "ಫ್ಲಾಟ್, ಬೀದಿ, ಗುರುತು",
+    "payment": "ಪಾವತಿ",
+    "payAtCounter": "ಕೌಂಟರ್‌ನಲ್ಲಿ ಪಾವತಿಸಿ",
+    "cashOnDelivery": "ಡೆಲಿವರಿಯಲ್ಲಿ ನಗದು ಅಥವಾ UPI",
+    "cashAtPickup": "ಪಿಕಪ್‌ನಲ್ಲಿ ನಗದು, ಕಾರ್ಡ್ ಅಥವಾ UPI",
+    "upiCards": "UPI, ಕಾರ್ಡ್‌ಗಳು, ನೆಟ್‌ಬ್ಯಾಂಕಿಂಗ್",
+    "cardStripe": "ಕ್ರೆಡಿಟ್ & ಡೆಬಿಟ್ ಕಾರ್ಡ್‌ಗಳು",
+    "test": "ಪರೀಕ್ಷೆ",
+    "placeOrder": "ಆರ್ಡರ್ ಮಾಡಿ",
+    "keepBrowsing": "ಇನ್ನಷ್ಟು ನೋಡಿ",
+    "needName": "ಆರ್ಡರ್‌ಗಾಗಿ ಹೆಸರು ನೀಡಿ.",
+    "needPhone": "ಸಂಪರ್ಕಿಸಬಹುದಾದ ಫೋನ್ ಸಂಖ್ಯೆ ನೀಡಿ.",
+    "needAddress": "ಡೆಲಿವರಿ ವಿಳಾಸ ಅಗತ್ಯವಿದೆ.",
+    "cardPayment": "ಕಾರ್ಡ್ ಪಾವತಿ",
+    "processing": "ಸಂಸ್ಕರಿಸಲಾಗುತ್ತಿದೆ…",
+    "payNow": "ಈಗ ಪಾವತಿಸಿ",
+    "back": "ಹಿಂದೆ",
+    "orderPlaced": "ಆರ್ಡರ್ ಮಾಡಲಾಗಿದೆ",
+    "done": "ಆಯಿತು",
+    "payFormFailed": "ಪಾವತಿ ಫಾರ್ಮ್ ಲೋಡ್ ಆಗಲಿಲ್ಲ. ನಿಮ್ಮ ಆರ್ಡರ್ ಉಳಿಸಲಾಗಿದೆ — ಪಿಕಪ್‌ನಲ್ಲಿ ಪಾವತಿಸಿ.",
+    "payIncomplete": "ನಿಮ್ಮ ಆರ್ಡರ್ ಉಳಿಸಲಾಗಿದೆ. ಪಾವತಿ ಆಗದಿದ್ದರೆ ಪಿಕಪ್‌ನಲ್ಲಿ ಪೂರ್ಣಗೊಳಿಸಿ.",
+    "showOrderNum": "ಕೌಂಟರ್‌ನಲ್ಲಿ ಈ ಆರ್ಡರ್ ಸಂಖ್ಯೆ ತೋರಿಸಿ.",
+    "payReceived": "ಪಾವತಿ ಸ್ವೀಕರಿಸಲಾಗಿದೆ — ಅಡುಗೆಮನೆಗೆ ನಿಮ್ಮ ಆರ್ಡರ್ ತಲುಪಿದೆ.",
+    "chooseOutlet": "ಔಟ್‌ಲೆಟ್ ಆಯ್ಕೆಮಾಡಿ",
+    "language": "ಭಾಷೆ",
+    "reviewOne": "1 ಐಟಂ ನೋಡಿ",
+    "reviewMany": "{n} ಐಟಂಗಳನ್ನು ನೋಡಿ",
+    "upToN": "{n} ವರೆಗೆ",
+    "chooseX": "{name} ಆಯ್ಕೆಮಾಡಿ",
+    "itemsN": "{n} ಐಟಂಗಳು",
+    "payOnDelivery": "ಡೆಲಿವರಿಯಲ್ಲಿ {total} ನೀಡಿ.",
+    "payAtPickup": "ಪಿಕಪ್‌ನಲ್ಲಿ {total} ನೀಡಿ.",
+  },
+  "ml": {
+    "orderOnline": "ഓൺലൈനിൽ ഓർഡർ ചെയ്യുക",
+    "loadingMenu": "മെനു ലോഡ് ചെയ്യുന്നു…",
+    "noServer": "റെസ്റ്റോറന്റ് സെർവറുമായി ബന്ധപ്പെടാനായില്ല.",
+    "orderingDisabled": "ഓൺലൈൻ ഓർഡറിംഗ്",
+    "disabledMsg": "ഈ റെസ്റ്റോറന്റ് ഇപ്പോൾ ഓൺലൈൻ ഓർഡറുകൾ എടുക്കുന്നില്ല.",
+    "pickupDelivery": "പിക്കപ്പ് & ഡെലിവറി · ഓൺലൈനിലോ കൗണ്ടറിലോ അടയ്ക്കുക",
+    "menuUnavailable": "മെനു ഇതുവരെ ലഭ്യമല്ല.",
+    "testMode": "ടെസ്റ്റ് മോഡ് — പേയ്മെന്റുകൾ അനുകരണമാണ്. യഥാർത്ഥ പണം മാറില്ല.",
+    "pickup": "പിക്കപ്പ്",
+    "delivery": "ഡെലിവറി",
+    "searchMenu": "മെനുവിൽ തിരയുക…",
+    "all": "എല്ലാം",
+    "soldOut": "തീർന്നു",
+    "noMatch": "മെനുവിൽ പൊരുത്തപ്പെടുന്നതൊന്നുമില്ല.",
+    "footer": "ചെക്ക്ഔട്ടിൽ കാണിക്കുന്ന നികുതി വിലയിൽ ഉൾപ്പെടും. നിങ്ങൾ ഓർഡർ ചെയ്തയുടൻ അടുക്കള തുടങ്ങും.",
+    "somethingWrong": "എന്തോ കുഴപ്പം സംഭവിച്ചു.",
+    "required": "നിർബന്ധം",
+    "optional": "ഓപ്ഷണൽ",
+    "kitchenNote": "അടുക്കളയോട് എന്തെങ്കിലും പറയാനുണ്ടോ?",
+    "kitchenNotePh": "അലർജി, ഉള്ളി വേണ്ട, നന്നായി വെന്തത്",
+    "fewer": "കുറവ്",
+    "more": "കൂടുതൽ",
+    "addToOrder": "ഓർഡറിൽ ചേർക്കുക",
+    "cancel": "റദ്ദാക്കുക",
+    "checkout": "ചെക്ക്ഔട്ട്",
+    "total": "ആകെ",
+    "taxIncluded": "റെസ്റ്റോറന്റ് കാണിക്കുന്ന ആകെത്തുകയിൽ നികുതി ഉൾപ്പെടും.",
+    "yourName": "നിങ്ങളുടെ പേര്",
+    "fullName": "മുഴുവൻ പേര്",
+    "phone": "ഫോൺ",
+    "phonePh": "ഓർഡർ വിവരങ്ങൾക്ക്",
+    "deliveryAddress": "ഡെലിവറി വിലാസം",
+    "addressPh": "ഫ്ലാറ്റ്, തെരുവ്, അടയാളം",
+    "payment": "പേയ്മെന്റ്",
+    "payAtCounter": "കൗണ്ടറിൽ അടയ്ക്കുക",
+    "cashOnDelivery": "ഡെലിവറിയിൽ പണമോ UPI-യോ",
+    "cashAtPickup": "പിക്കപ്പിൽ പണമോ കാർഡോ UPI-യോ",
+    "upiCards": "UPI, കാർഡുകൾ, നെറ്റ്ബാങ്കിംഗ്",
+    "cardStripe": "ക്രെഡിറ്റ് & ഡെബിറ്റ് കാർഡുകൾ",
+    "test": "ടെസ്റ്റ്",
+    "placeOrder": "ഓർഡർ ചെയ്യുക",
+    "keepBrowsing": "കൂടുതൽ കാണുക",
+    "needName": "ഓർഡറിന് ഒരു പേര് നൽകുക.",
+    "needPhone": "ബന്ധപ്പെടാവുന്ന ഫോൺ നമ്പർ നൽകുക.",
+    "needAddress": "ഡെലിവറി വിലാസം വേണം.",
+    "cardPayment": "കാർഡ് പേയ്മെന്റ്",
+    "processing": "പ്രോസസ്സ് ചെയ്യുന്നു…",
+    "payNow": "ഇപ്പോൾ അടയ്ക്കുക",
+    "back": "തിരികെ",
+    "orderPlaced": "ഓർഡർ ചെയ്തു",
+    "done": "കഴിഞ്ഞു",
+    "payFormFailed": "പേയ്മെന്റ് ഫോം ലോഡ് ചെയ്യാനായില്ല. നിങ്ങളുടെ ഓർഡർ സേവ് ചെയ്തു — പിക്കപ്പിൽ അടയ്ക്കുക.",
+    "payIncomplete": "നിങ്ങളുടെ ഓർഡർ സേവ് ചെയ്തു. പേയ്മെന്റ് നടന്നില്ലെങ്കിൽ പിക്കപ്പിൽ പൂർത്തിയാക്കുക.",
+    "showOrderNum": "കൗണ്ടറിൽ ഈ ഓർഡർ നമ്പർ കാണിക്കുക.",
+    "payReceived": "പേയ്മെന്റ് ലഭിച്ചു — അടുക്കളയ്ക്ക് നിങ്ങളുടെ ഓർഡർ കിട്ടി.",
+    "chooseOutlet": "ഔട്ട്ലെറ്റ് തിരഞ്ഞെടുക്കുക",
+    "language": "ഭാഷ",
+    "reviewOne": "1 ഇനം കാണുക",
+    "reviewMany": "{n} ഇനങ്ങൾ കാണുക",
+    "upToN": "{n} വരെ",
+    "chooseX": "{name} തിരഞ്ഞെടുക്കുക",
+    "itemsN": "{n} ഇനങ്ങൾ",
+    "payOnDelivery": "ഡെലിവറിയിൽ {total} നൽകുക.",
+    "payAtPickup": "പിക്കപ്പിൽ {total} നൽകുക.",
+  },
+};
+const $ = (id) => document.getElementById(id);
+const showSheet = () => { const d = $("sheet"); if (!d.open) d.showModal(); };
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+// --- language & outlet -------------------------------------------------------
+// ?lang= overrides the remembered language; the switcher persists per device.
+// ?outlet= overrides the remembered outlet; the picker persists per device.
+const params = new URLSearchParams(location.search);
+const LANGS = ["en", "hi", "ta", "te", "kn", "ml"];
+const LANG_NAMES = { en: "English", hi: "हिन्दी", ta: "தமிழ்", te: "తెలుగు", kn: "ಕನ್ನಡ", ml: "മലയാളം" };
+
+let lang = params.get("lang") || localStorage.getItem("dineos_lang") || "en";
+if (!LANGS.includes(lang)) lang = "en";
+let outletId = params.get("outlet") || localStorage.getItem("dineos_outlet") || null;
+
+const t = (k) => (STRINGS[lang] && STRINGS[lang][k]) || STRINGS.en[k] || k;
+const tf = (k, vars) => {
+  let s = t(k);
+  for (const key in vars) s = s.replace("{" + key + "}", vars[key]);
+  return s;
+};
+
+const state = { cfg: null, menu: null, cart: [], type: "takeaway", cat: "all", sending: false };
+let sym = "₹";
+
+const money = (n) => sym + (Math.round((Number(n) || 0) * 100) / 100).toFixed(2);
+const cartCount = () => state.cart.reduce((s, l) => s + l.qty, 0);
+const lineTotal = (l) => (l.price + l.modifiers.reduce((s, m) => s + Number(m.price_delta || 0), 0)) * l.qty;
+const cartTotal = () => state.cart.reduce((s, l) => s + lineTotal(l), 0);
+const imgUrl = (item) => item.image ? "/api/files/menu_items/" + encodeURIComponent(item.id) + "/" + encodeURIComponent(item.image) : "";
+
+async function okJson(res) {
+  if (!res.ok) { let m = t("somethingWrong"); try { m = (await res.json()).message || m; } catch (e) {} throw new Error(m); }
+  return res.json();
+}
+
+function renderStatic() {
+  document.documentElement.lang = lang;
+  document.title = t("orderOnline") + (state.cfg && state.cfg.restaurant ? " · " + state.cfg.restaurant.name : "");
+  $("kicker").textContent = t("orderOnline");
+  $("langlbl").textContent = t("language");
+  $("outletlbl").textContent = t("chooseOutlet");
+  $("t-pickup").textContent = t("pickup");
+  $("t-delivery").textContent = t("delivery");
+  $("typetoggle").setAttribute("aria-label", t("pickup") + " / " + t("delivery"));
+  $("q").placeholder = t("searchMenu");
+  $("foot").textContent = t("footer");
+  if (state.cfg) {
+    const r = state.cfg.restaurant || {};
+    $("rname").textContent = r.name || t("orderOnline");
+    $("rsub").textContent = t("pickupDelivery");
+    $("testbanner").textContent = t("testMode");
+  }
+}
+
+function buildLangSwitcher() {
+  const sel = $("langsel");
+  sel.innerHTML = LANGS.map((l) =>
+    '<option value="' + l + '"' + (l === lang ? " selected" : "") + ">" + esc(LANG_NAMES[l]) + "</option>").join("");
+  sel.onchange = () => {
+    lang = sel.value;
+    localStorage.setItem("dineos_lang", lang);
+    if ($("sheet").open) $("sheet").close();
+    renderStatic(); drawCats(); drawMenu(); syncBar();
+  };
+}
+
+function buildOutletPicker() {
+  const outlets = (state.cfg && state.cfg.outlets) || [];
+  const wrap = $("outletwrap"), sel = $("outletsel");
+  if (outlets.length < 2) { wrap.hidden = true; return; }
+  wrap.hidden = false;
+  // The remembered outlet may not exist (or be inactive) — fall back to first.
+  if (!outlets.some((o) => o.id === outletId)) outletId = outlets[0].id;
+  sel.innerHTML = outlets.map((o) =>
+    '<option value="' + esc(o.id) + '"' + (o.id === outletId ? " selected" : "") + ">" + esc(o.name) + "</option>").join("");
+  sel.onchange = () => {
+    outletId = sel.value;
+    localStorage.setItem("dineos_outlet", outletId);
+    state.cart = []; state.cat = "all";
+    loadMenu();
+  };
+}
+
+async function loadMenu() {
+  try {
+    state.menu = await fetch("/api/app/menu" + (outletId ? "?outlet=" + encodeURIComponent(outletId) : "")).then(okJson);
+  } catch (e) { $("rsub").textContent = t("menuUnavailable"); return; }
+  const o = (state.cfg.outlets || []).find((x) => x.id === outletId);
+  if (o && o.currency_symbol) sym = o.currency_symbol;
+  renderStatic(); drawCats(); drawMenu(); syncBar();
+}
+
+async function init() {
+  buildLangSwitcher();
+  $("rsub").textContent = t("loadingMenu");
+  renderStatic();
+  try {
+    state.cfg = await fetch("/api/app/online-config").then(okJson);
+  } catch (e) { $("rsub").textContent = t("noServer"); return; }
+  if (!state.cfg.enabled) {
+    $("rname").textContent = t("orderingDisabled");
+    $("rsub").textContent = t("disabledMsg");
+    return;
+  }
+  const r = state.cfg.restaurant || {};
+  sym = r.currency_symbol || "₹";
+  if (state.cfg.test_mode) { $("testbanner").hidden = false; }
+  buildOutletPicker();
+  await loadMenu();
+}
+
+function drawCats() {
+  if (!state.menu) return;
+  const cats = [{ id: "all", name: t("all") }].concat(state.menu.categories);
+  $("cats").innerHTML = cats.map((c) =>
+    '<button data-cat="' + esc(c.id) + '" aria-selected="' + (state.cat === c.id) + '">' + esc(c.name) + "</button>").join("");
+  $("cats").querySelectorAll("button").forEach((b) => {
+    b.onclick = () => { state.cat = b.dataset.cat; drawCats(); drawMenu(); };
+  });
+}
+
+function drawMenu() {
+  if (!state.menu) return;
+  const q = $("q").value.trim().toLowerCase();
+  const items = state.menu.items.filter((i) =>
+    (state.cat === "all" || i.category === state.cat) &&
+    (!q || (i.name + " " + (i.description || "")).toLowerCase().includes(q)));
+  $("menu").innerHTML = items.map((i) =>
+    '<button class="card"' + (i.available ? "" : " disabled") + ' data-id="' + esc(i.id) + '">' +
+    (i.image ? '<img src="' + esc(imgUrl(i)) + '" alt="" loading="lazy">' : "") +
+    '<span class="grow"><span class="name">' + esc(i.name) +
+    (i.available ? "" : '<span class="soldout"> · ' + esc(t("soldOut")) + "</span>") + "</span>" +
+    (i.description ? '<span class="desc">' + esc(i.description) + "</span>" : "") +
+    "</span>" +
+    '<span class="price">' + money(i.price) + "</span></button>").join("") ||
+    '<div class="pad" style="color:var(--muted);padding-top:20px">' + esc(t("noMatch")) + "</div>";
+  $("menu").querySelectorAll(".card[data-id]").forEach((b) => { b.onclick = () => openItem(b.dataset.id); });
+}
+
+$("q").addEventListener("input", drawMenu);
+$("t-pickup").onclick = () => setType("takeaway");
+$("t-delivery").onclick = () => setType("delivery");
+function setType(ty) {
+  state.type = ty;
+  $("t-pickup").setAttribute("aria-pressed", ty === "takeaway");
+  $("t-delivery").setAttribute("aria-pressed", ty === "delivery");
+}
+
+function openItem(id) {
+  const item = state.menu.items.find((i) => i.id === id);
+  if (!item || !item.available) return;
+  const groups = item.groups.map((gid) => state.menu.groups.find((g) => g.id === gid)).filter(Boolean);
+  const picked = {}; let qty = 1;
+
+  function draw() {
+    const chosen = [];
+    for (const g of groups) for (const mid of picked[g.id] || []) {
+      const mod = g.modifiers.find((m) => m.id === mid); if (mod) chosen.push(mod);
+    }
+    const unit = item.price + chosen.reduce((s, m) => s + Number(m.price_delta || 0), 0);
+    const missing = groups.find((g) => g.required && !(picked[g.id] || []).length);
+    $("sheet-body").innerHTML =
+      (item.image ? '<img src="' + esc(imgUrl(item)) + '" alt="" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:12px">' : "") +
+      "<h2 class=\"serif\">" + esc(item.name) + "</h2>" +
+      '<div class="sub">' + money(item.price) + (item.description ? " · " + esc(item.description) : "") + "</div>" +
+      groups.map((g) =>
+        "<fieldset><legend>" + esc(g.name) +
+        (g.required ? '<span class="req">' + esc(t("required")) + "</span>"
+                    : '<span class="optlbl">' + esc(t("optional")) + (g.max > 1 ? ", " + esc(tf("upToN", { n: g.max })) : "") + "</span>") +
+        '</legend><div class="opts">' +
+        g.modifiers.map((mo) =>
+          '<button class="opt-btn" data-g="' + esc(g.id) + '" data-m="' + esc(mo.id) + '" aria-pressed="' + ((picked[g.id] || []).includes(mo.id)) + '">' +
+          esc(mo.name) + (Number(mo.price_delta) ? '<span class="delta">' + (mo.price_delta > 0 ? "+" : "−") + money(Math.abs(mo.price_delta)).slice(sym.length) + "</span>" : "") +
+          "</button>").join("") + "</div></fieldset>").join("") +
+      '<label class="field" for="note">' + esc(t("kitchenNote")) + "</label>" +
+      '<input type="text" id="note" maxlength="200" placeholder="' + esc(t("kitchenNotePh")) + '">' +
+      '<div class="qty"><button id="minus" aria-label="' + esc(t("fewer")) + '">−</button>' +
+      '<span id="q">' + qty + "</span>" +
+      '<button id="plus" aria-label="' + esc(t("more")) + '">+</button></div>' +
+      '<button class="primary" id="add"' + (missing ? " disabled" : "") + ">" +
+      "<span>" + (missing ? esc(tf("chooseX", { name: missing.name })) : esc(t("addToOrder"))) + '</span><span>' + money(unit * qty) + "</span></button>" +
+      '<button class="ghost" id="cancel">' + esc(t("cancel")) + "</button>";
+
+    $("sheet-body").querySelectorAll(".opt-btn").forEach((b) => {
+      b.onclick = () => {
+        const g = groups.find((x) => x.id === b.dataset.g);
+        const cur = picked[g.id] || []; const has = cur.includes(b.dataset.m);
+        if (has) picked[g.id] = cur.filter((x) => x !== b.dataset.m);
+        else if (g.max <= 1) picked[g.id] = [b.dataset.m];
+        else if (cur.length < g.max) picked[g.id] = cur.concat(b.dataset.m);
+        const note = $("note").value; draw(); $("note").value = note;
+      };
+    });
+    $("minus").onclick = () => { if (qty > 1) { qty--; const n = $("note").value; draw(); $("note").value = n; } };
+    $("plus").onclick = () => { if (qty < 20) { qty++; const n = $("note").value; draw(); $("note").value = n; } };
+    $("cancel").onclick = () => $("sheet").close();
+    $("add").onclick = () => {
+      state.cart.push({ item_id: item.id, name: item.name, price: item.price, qty: qty,
+        modifiers: chosen.map((m) => ({ id: m.id, name: m.name, price_delta: m.price_delta })),
+        note: $("note").value.trim() });
+      $("sheet").close(); syncBar();
+    };
+  }
+  draw(); showSheet();
+}
+
+function syncBar() {
+  const n = cartCount();
+  $("bar").classList.toggle("up", n > 0);
+  $("review-count").textContent = n === 1 ? t("reviewOne") : tf("reviewMany", { n: n });
+  $("review-total").textContent = money(cartTotal());
+}
+$("review").onclick = checkout;
+
+let payChoice = "counter";
+function checkout() {
+  if (!state.cart.length) return;
+  const prov = state.cfg.providers || {};
+  const online = [];
+  if (prov.razorpay) online.push({ id: "razorpay", t: "Razorpay", d: t("upiCards") + (state.cfg.test_mode ? " · " + t("test") : "") });
+  if (prov.stripe) online.push({ id: "stripe", t: "Card (Stripe)", d: t("cardStripe") + (state.cfg.test_mode ? " · " + t("test") : "") });
+  payChoice = "counter";
+
+  function drawPay() {
+    $("sheet-body").innerHTML =
+      "<h2>" + esc(t("checkout")) + "</h2>" +
+      '<div class="sub">' + (state.type === "delivery" ? esc(t("delivery")) : esc(t("pickup"))) + " · " + esc(tf("itemsN", { n: cartCount() })) + "</div>" +
+      state.cart.map((l, idx) =>
+        '<div class="line"><span class="q">' + l.qty + "×</span><span style=\"flex:1\"><span>" + esc(l.name) + "</span>" +
+        (l.modifiers.length ? '<div class="mods">' + esc(l.modifiers.map((m) => m.name).join(", ")) + "</div>" : "") +
+        (l.note ? '<div class="note">' + esc(l.note) + "</div>" : "") +
+        '</span><span class="tnum">' + money(lineTotal(l)) + '</span><button data-rm="' + idx + '" aria-label="' + esc(t("cancel")) + '">×</button></div>').join("") +
+      '<div class="total"><span>' + esc(t("total")) + "</span><span>" + money(cartTotal()) + "</span></div>" +
+      '<div class="sub">' + esc(t("taxIncluded")) + "</div>" +
+      '<label class="field" for="cname">' + esc(t("yourName")) + '</label><input type="text" id="cname" maxlength="120" autocomplete="name" placeholder="' + esc(t("fullName")) + '">' +
+      '<label class="field" for="cphone">' + esc(t("phone")) + '</label><input type="tel" id="cphone" maxlength="20" autocomplete="tel" placeholder="' + esc(t("phonePh")) + '">' +
+      (state.type === "delivery" ? '<label class="field" for="addr">' + esc(t("deliveryAddress")) + '</label><textarea id="addr" rows="2" maxlength="500" placeholder="' + esc(t("addressPh")) + '"></textarea>' : "") +
+      '<label class="field">' + esc(t("payment")) + '</label><div class="payopts">' +
+      online.map((o) =>
+        '<button class="payopt" data-pay="' + o.id + '" aria-pressed="' + (payChoice === o.id) + '">' +
+        '<span style="flex:1"><span class="t">' + esc(o.t) + '</span><br><span class="d">' + esc(o.d) + "</span></span></button>").join("") +
+      '<button class="payopt" data-pay="counter" aria-pressed="' + (payChoice === "counter") + '">' +
+      '<span style="flex:1"><span class="t">' + esc(t("payAtCounter")) + '</span><br><span class="d">' +
+      (state.type === "delivery" ? esc(t("cashOnDelivery")) : esc(t("cashAtPickup"))) + "</span></span></button></div>" +
+      '<div id="msg"></div>' +
+      '<button class="primary" id="place"><span>' + esc(t("placeOrder")) + "</span><span>" + money(cartTotal()) + "</span></button>" +
+      '<button class="ghost" id="more">' + esc(t("keepBrowsing")) + "</button>";
+
+    $("sheet-body").querySelectorAll("[data-rm]").forEach((b) => {
+      b.onclick = () => { state.cart.splice(Number(b.dataset.rm), 1); syncBar(); if (state.cart.length) drawPay(); else $("sheet").close(); };
+    });
+    $("sheet-body").querySelectorAll("[data-pay]").forEach((b) => {
+      b.onclick = () => { payChoice = b.dataset.pay; drawPay(); };
+    });
+    $("more").onclick = () => $("sheet").close();
+    $("place").onclick = placeOrder;
+  }
+  drawPay(); showSheet();
+}
+
+async function placeOrder() {
+  if (state.sending) return;
+  const name = $("cname").value.trim(), phone = $("cphone").value.trim();
+  const addrEl = $("addr"); const address = addrEl ? addrEl.value.trim() : "";
+  const msg = (tx) => { $("msg").textContent = tx || ""; };
+  if (!name) { msg(t("needName")); return; }
+  if (phone.replace(/\D/g, "").length < 6) { msg(t("needPhone")); return; }
+  if (state.type === "delivery" && address.length < 4) { msg(t("needAddress")); return; }
+  msg(""); state.sending = true;
+
+  const payload = {
+    items: state.cart.map((l) => ({ item_id: l.item_id, qty: l.qty, modifiers: l.modifiers.map((m) => m.id), note: l.note })),
+    customer_name: name, customer_phone: phone, type: state.type, address: address,
+    payment: payChoice === "counter" ? "counter" : "online",
+    provider: payChoice === "counter" ? undefined : payChoice,
+    outlet: outletId || undefined,
+  };
+  let res;
+  try { res = await fetch("/api/app/online-order", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }).then(okJson); }
+  catch (e) { state.sending = false; msg(e.message); return; }
+  state.sending = false;
+
+  if (res.payment.mode === "counter") return done(res, tf(state.type === "delivery" ? "payOnDelivery" : "payAtPickup", { total: money(res.total) }));
+  if (res.payment.provider === "razorpay") return payRazorpay(res);
+  if (res.payment.provider === "stripe") return payStripe(res);
+}
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector('script[src="' + src + '"]')) return resolve();
+    const s = document.createElement("script"); s.src = src; s.onload = resolve; s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+
+async function payRazorpay(res) {
+  try { await loadScript("https://checkout.razorpay.com/v1/checkout.js"); }
+  catch (e) { return done(res, t("payFormFailed"), true); }
+  const p = res.payment;
+  const rzp = new Razorpay({
+    key: p.key_id, order_id: p.gateway_id, amount: p.amount, currency: p.currency,
+    name: state.cfg.restaurant.name, description: "Order " + res.order_number,
+    theme: { color: "#17603F" },
+    handler: () => done(res, t("payReceived")),
+    modal: { ondismiss: () => done(res, t("payIncomplete"), true) },
+  });
+  rzp.open();
+}
+
+async function payStripe(res) {
+  try { await loadScript("https://js.stripe.com/v3/"); }
+  catch (e) { return done(res, t("payFormFailed"), true); }
+  const p = res.payment;
+  $("sheet-body").innerHTML =
+    "<h2>" + esc(t("cardPayment")) + "</h2>" +
+    '<div class="sub">Order ' + esc(res.order_number) + " · " + money(res.total) + (p.test ? " · " + esc(t("test")) : "") + "</div>" +
+    '<div id="card-el" style="padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--surface)"></div>' +
+    '<div id="msg"></div>' +
+    '<button class="primary" id="paynow"><span>' + esc(t("payNow")) + "</span><span>" + money(res.total) + "</span></button>" +
+    '<button class="ghost" id="back">' + esc(t("back")) + "</button>";
+  const stripe = Stripe(p.publishable_key);
+  const elements = stripe.elements();
+  const card = elements.create("card"); card.mount("#card-el");
+  $("back").onclick = () => checkout();
+  $("paynow").onclick = async () => {
+    const msg = (tx) => { $("msg").textContent = tx || ""; };
+    msg(t("processing"));
+    const out = await stripe.confirmCardPayment(p.client_secret, { payment_method: { card: card } });
+    if (out.error) { msg(out.error.message); return; }
+    done(res, t("payReceived"));
+  };
+}
+
+function done(res, note, warn) {
+  state.cart = []; syncBar();
+  $("sheet-body").innerHTML =
+    '<div class="done"><div class="tick">✓</div>' +
+    "<h2 class=\"serif\">" + esc(t("orderPlaced")) + "</h2>" +
+    '<div class="ordnum">' + esc(res.order_number) + "</div>" +
+    '<div class="sub">' + esc(note) + "</div>" +
+    (warn ? '<div class="sub">' + esc(t("showOrderNum")) + "</div>" : "") +
+    '<button class="primary" id="ok"><span style="margin:0 auto">' + esc(t("done")) + "</span></button></div>";
+  $("ok").onclick = () => { $("sheet").close(); drawMenu(); };
+  showSheet();
+}
+
+init();
+</script>
+</body>
+</html>

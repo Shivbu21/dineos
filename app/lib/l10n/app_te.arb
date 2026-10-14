@@ -1,0 +1,488 @@
+{
+  "@@locale": "te",
+  "appTitle": "dineos",
+  "@appTitle": {
+    "description": "Nama produk. Jangan diterjemahkan."
+  },
+  "commonCancel": "రద్దు చేయి",
+  "commonDelete": "తొలగించు",
+  "commonRemove": "తీసివేయి",
+  "commonClose": "మూసివేయి",
+  "commonDone": "అయింది",
+  "commonSave": "మార్పులను సేవ్ చేయి",
+  "commonAdd": "జోడించు",
+  "commonName": "పేరు",
+  "commonAddress": "చిరునామా",
+  "commonPort": "పోర్ట్",
+  "commonPrice": "ధర",
+  "commonTotal": "మొత్తం",
+  "commonSubtotal": "సబ్‌టోటల్",
+  "commonNote": "గమనిక",
+  "commonReason": "కారణం",
+  "commonAmount": "మొత్తం",
+  "commonReference": "రిఫరెన్స్",
+  "commonDescription": "వివరణ",
+  "commonCategory": "వర్గం",
+  "commonPhoto": "ఫోటో",
+  "commonOptions": "ఎంపికలు",
+  "commonTags": "ట్యాగ్‌లు",
+  "commonTryAgain": "మళ్లీ ప్రయత్నించు",
+  "commonCouldNotLoad": "లోడ్ చేయలేకపోయింది",
+  "commonTest": "పరీక్ష",
+  "commonEarlier": "ముందు",
+  "commonLater": "తర్వాత",
+  "commonAll": "అన్నీ",
+  "commonOn": "ఆన్",
+  "commonOff": "ఆఫ్",
+  "signInTitle": "సైన్ ఇన్",
+  "signInUsername": "యూజర్‌నేమ్",
+  "signInPin": "పిన్",
+  "signInUseDifferentServer": "వేరే సర్వర్‌ను వాడు",
+  "connectTitle": "మీ సర్వర్‌కు కనెక్ట్ చేయండి",
+  "connectAction": "కనెక్ట్",
+  "connectOnThisNetwork": "ఈ నెట్‌వర్క్‌లో",
+  "connectSubtitle": "రెస్టారెంట్ నిర్వహణ",
+  "connectSubtitleLong": "మీ రెస్టారెంట్‌ను నడిపే కంప్యూటర్ వైపు ఈ పరికరాన్ని చూపండి.",
+  "connectFooter": "ఎప్పటికీ ఉచితం. మీ డేటా మీ మెషీన్‌లోనే ఉంటుంది.",
+  "connectServerHelper": "సర్వర్‌ను ఈ కంప్యూటర్‌లోనే నడుపుతున్నారా? అలాగే ఉంచండి.",
+  "connectRunOnThisComputer": "రెస్టారెంట్‌ను ఈ కంప్యూటర్‌లోనే నడుపు",
+  "connectRunOnThisComputerHint": "అన్నీ ఇక్కడే సెటప్ అవుతాయి. టాబ్లెట్లు, కిచెన్ స్క్రీన్ ఈ మెషీన్‌కు కనెక్ట్ అవుతాయి.",
+  "connectScanCode": "కోడ్‌ను స్కాన్ చేయి",
+  "connectServerAddress": "సర్వర్ చిరునామా",
+  "connectOr": "లేదా",
+  "connectScanPointAtCode": "కోడ్ వైపు చూపించు",
+  "connectScanTypeInstead": "బదులుగా టైప్ చేయి",
+  "setupTitle": "మీ రెస్టారెంట్‌ను సెటప్ చేయండి",
+  "kdsOnThePass": "పాస్‌లో",
+  "kdsNothingOnThePass": "పాస్‌లో ఏమీ లేదు",
+  "kdsCouldNotUpdate": "అప్‌డేట్ చేయలేకపోయింది: {error}",
+  "@kdsCouldNotUpdate": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "navPos": "కౌంటర్",
+  "navKds": "వంటగది",
+  "navManager": "మేనేజర్",
+  "navSignOut": "సైన్ అవుట్",
+  "navSwitchShell": "స్క్రీన్ మార్చు",
+  "floorTitle": "ఫ్లోర్",
+  "floorHint": "బిల్ తెరవడానికి లేదా తీసుకోవడానికి టేబుల్‌ను నొక్కండి.",
+  "floorNoTables": "టేబుళ్లు సెటప్ చేయలేదు",
+  "floorTakeaway": "టేకవే",
+  "floorOpenBill": "బిల్ తెరువు",
+  "floorHowManyGuests": "ఎంతమంది అతిథులు?",
+  "floorSeatTable": "{label} వద్ద కూర్చోబెట్టు",
+  "@floorSeatTable": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "floorCouldNotOpen": "టేబుల్ తెరవలేకపోయింది: {error}",
+  "@floorCouldNotOpen": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "floorCouldNotStart": "ఆర్డర్ ప్రారంభించలేకపోయింది: {error}",
+  "@floorCouldNotStart": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "floorInUse": "వాడుకలో",
+  "orderBackToFloor": "ఫ్లోర్‌కు తిరిగి",
+  "orderNothingHere": "ఇక్కడ ఏమీ లేదు",
+  "orderMenuEmpty": "మెనూ ఖాళీగా ఉంది",
+  "orderBillGone": "ఈ బిల్ పోయింది",
+  "orderCouldNotAdd": "దాన్ని జోడించలేకపోయింది: {error}",
+  "@orderCouldNotAdd": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "orderSoldOut": "86",
+  "orderAddToBill": "బిల్లులో జోడించు",
+  "orderNoteForKitchen": "వంటగదికి గమనిక",
+  "orderUpTo": "{count} వరకు",
+  "@orderUpTo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "moveBillTitle": "బిల్ #{number} తరలించు",
+  "@moveBillTitle": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "moveBillNowhere": "దాన్ని తరలించడానికి వేరే చోటు లేదు.",
+  "moveBillWhereTo": "ఎక్కడికి తరలించాలి?",
+  "discountTitle": "డిస్కౌంట్",
+  "discountAmountOff": "మొత్తంలో తగ్గింపు",
+  "discountNewSubtotal": "కొత్త సబ్‌టోటల్",
+  "discountReasonHint": "దీని నుండే సర్వీస్, పన్ను లెక్కిస్తారు.",
+  "discountClear": "క్లియర్ చేయి",
+  "paymentTitle": "వారు ఎలా చెల్లిస్తున్నారు?",
+  "paymentCashReceived": "నగదు అందింది",
+  "paymentChangeDue": "తిరిగి ఇవ్వాల్సిన",
+  "paymentPaid": "చెల్లించబడింది",
+  "paymentTake": "{amount} తీసుకో",
+  "@paymentTake": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentTakenSoFar": "ఇప్పటివరకు తీసుకున్నది",
+  "paymentRemovePayment": "ఈ చెల్లింపును తొలగించు",
+  "paymentReceipt": "రసీదు",
+  "receiptTitle": "రసీదు",
+  "receiptPrintTo": "{printer}‌లో ప్రింట్ చేయి",
+  "@receiptPrintTo": {
+    "placeholders": {
+      "printer": {
+        "type": "String"
+      }
+    }
+  },
+  "shiftCloseTitle": "మీ షిఫ్ట్‌ను ముగించు",
+  "shiftCashInDrawer": "డ్రాయర్‌లో నగదు",
+  "shiftCashTaken": "తీసుకున్న నగదు",
+  "shiftCounted": "లెక్కించినది",
+  "shiftOpeningFloat": "ప్రారంభ మొత్తం",
+  "shiftShouldBeInDrawer": "డ్రాయర్‌లో ఉండాల్సింది",
+  "shiftHereIsWhat": "లెక్క ఇదిగో.",
+  "shiftClosed": "షిఫ్ట్ ముగిసింది",
+  "summaryTakings": "ఆదాయం",
+  "summaryHowItAddsUp": "మొత్తం ఎలా వచ్చింది",
+  "summaryHowItWasPaid": "ఎలా చెల్లించబడింది",
+  "summaryTheDrawer": "డ్రాయర్",
+  "summaryCancelled": "రద్దు",
+  "menuItemsTitle": "ఐటమ్‌లు",
+  "menuItemsSubtitle": "మీరు అమ్మేవన్నీ, వాటి ధరతో.",
+  "menuItemsNew": "కొత్త ఐటమ్",
+  "menuItemsNone": "ఇంకా ఐటమ్‌లు లేవు",
+  "menuItemsNoMatch": "సరిపోలేదు",
+  "menuItemsAddFirst": "మీ మొదటి ఐటమ్‌ను జోడించండి",
+  "menuItemsAddCategoryFirst": "ముందు వర్గాన్ని జోడించండి",
+  "menuCategoriesTitle": "వర్గాలు",
+  "menuCategoriesSubtitle": "మీ మెనూ భాగాలు. కౌంటర్‌లోనూ ఇదే క్రమం.",
+  "menuCategoriesNew": "కొత్త వర్గం",
+  "menuCategoriesNone": "ఇంకా వర్గాలు లేవు",
+  "menuCategoriesAddFirst": "మీ మొదటి వర్గాన్ని జోడించండి",
+  "menuCategoriesHidden": "దాచబడింది",
+  "menuCategoriesTileColour": "టైల్ రంగు",
+  "menuCategoriesTileColourHint": "సిబ్బంది త్వరగా కనుగొనేందుకు కౌంటర్‌లో చూపుతుంది.",
+  "menuCategoriesVisible": "కౌంటర్‌లో కనిపిస్తుంది",
+  "menuCategoriesStation": "దీన్ని చేసేది",
+  "menuCategoriesStationHint": "ఈ విభాగం ఆర్డర్లు ఆ స్టేషన్‌లో ప్రింట్ అవుతాయి.",
+  "menuItemOnTheMenu": "మెనూలో ఉంది",
+  "menuItemInStock": "స్టాక్‌లో",
+  "menuItemCode": "ఐటమ్ కోడ్",
+  "menuItemPrepTime": "తయారీ సమయం",
+  "modifiersTitle": "మాడిఫైయర్లు",
+  "modifiersSubtitle": "ఐటమ్‌లకు జోడించే ఎంపికలు. ఒక్కసారి తయారుచేసి ఎక్కడైనా వాడండి.",
+  "modifiersNewGroup": "కొత్త గ్రూప్",
+  "modifiersNone": "ఇంకా మాడిఫైయర్ గ్రూపులు లేవు",
+  "modifiersCreateFirst": "మీ మొదటి గ్రూప్‌ను తయారుచేయండి",
+  "modifiersAddOption": "ఎంపికను జోడించు",
+  "modifiersNoOptions": "ఇంకా ఎంపికలు లేవు.",
+  "modifiersAllowMoreThanOne": "ఒకటి కంటే ఎక్కువ అనుమతించు",
+  "modifiersMustBeAnswered": "సమాధానం తప్పనిసరి",
+  "modifiersMaxSelectable": "ఎంచుకోగల గరిష్ఠం",
+  "modifiersPriceChange": "ధర మార్పు",
+  "modifiersOffered": "అందుబాటులో",
+  "tablesTitle": "టేబుళ్లు",
+  "tablesSubtitle": "మీ ఫ్లోర్. గదిలో భాగాలుంటే జోన్లుగా విభజించండి.",
+  "tablesNew": "కొత్త టేబుల్",
+  "tablesNone": "ఇంకా టేబుళ్లు లేవు",
+  "tablesAddFirst": "మీ మొదటి టేబుల్‌ను జోడించండి",
+  "tablesNameOrNumber": "పేరు లేదా సంఖ్య",
+  "tablesSeats": "సీట్లు",
+  "tablesZone": "జోన్",
+  "tablesInUse": "వాడుకలో ఉంది",
+  "tablesCodes": "టేబుల్ కోడ్‌లు",
+  "tablesCodesNone": "ఇంకా టేబుళ్లు వాడుకలో లేవు.",
+  "tablesDeleteConfirm": "{label} తొలగించాలా?",
+  "@tablesDeleteConfirm": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "staffTitle": "సిబ్బంది",
+  "staffSubtitle": "ఎవరు సైన్ ఇన్ చేయవచ్చు, వారికి ఏమి అనుమతి.",
+  "staffAddSomeone": "ఒకరిని జోడించు",
+  "staffNobodyYet": "ఇంకా ఎవరూ లేరు",
+  "staffCanSignIn": "సైన్ ఇన్ చేయవచ్చు",
+  "staffWhatTheyCanDo": "వారు ఏమి చేయగలరు",
+  "staffYou": "మీరు",
+  "staffCannotDisableSelf": "మీ ఖాతాను మీరే ఆపలేరు.",
+  "staffGiveNewPin": "వారికి కొత్త పిన్ ఇవ్వు",
+  "staffNewPinFor": "{name} కోసం కొత్త పిన్",
+  "@staffNewPinFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "staffSetPin": "పిన్ సెట్ చేయి",
+  "staffRemoveConfirm": "{name} తొలగించాలా?",
+  "@staffRemoveConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reportsTitle": "రిపోర్టులు",
+  "reportsSubtitle": "ప్రతి రోజు లెక్క.",
+  "reportsWhatSold": "ఏమి అమ్ముడైంది",
+  "reportsWhoServedIt": "ఎవరు సర్వ్ చేశారు",
+  "reportsByHour": "గంట వారీగా",
+  "reportsExportCsv": "CSV ఎగుమతి",
+  "reportsSaved": "రిపోర్టు సేవ్ అయింది.",
+  "reportsCouldNotSave": "సేవ్ చేయలేకపోయింది: {error}",
+  "@reportsCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "activityTitle": "కార్యకలాపం",
+  "activitySubtitle": "డిస్కౌంట్లు, రద్దులు — ప్రతిదానితో పేరు.",
+  "activityMoneyLeavingOnly": "బయటకు వెళ్లే డబ్బు మాత్రమే",
+  "settingsTitle": "సెట్టింగ్‌లు",
+  "settingsRestaurant": "రెస్టారెంట్",
+  "settingsRestaurantHint": "మీ రెస్టారెంట్ తనను ఎలా చూపుతుంది, ఏమి ఛార్జ్ చేస్తుంది.",
+  "settingsCharges": "ఛార్జీలు",
+  "settingsCurrency": "కరెన్సీ",
+  "settingsTaxRate": "పన్ను రేటు",
+  "settingsTaxIncluded": "మెనూ ధరల్లో పన్ను కలిసి ఉంది",
+  "settingsServiceCharge": "సర్వీస్ ఛార్జ్",
+  "settingsPrinters": "ప్రింటర్లు",
+  "settingsReceipts": "రసీదులు",
+  "settingsHeader": "హెడర్",
+  "settingsFooter": "ఫుటర్",
+  "settingsServer": "సర్వర్",
+  "settingsThisDevice": "ఈ పరికరం",
+  "settingsAddTablet": "టాబ్లెట్ జోడించు",
+  "settingsSignOut": "సైన్ అవుట్",
+  "settingsDisconnect": "డిస్‌కనెక్ట్ చేయి",
+  "settingsDisconnectConfirm": "ఈ పరికరాన్ని డిస్‌కనెక్ట్ చేయాలా?",
+  "printerNew": "ప్రింటర్ జోడించు",
+  "printerPaperWidth": "కాగితం వెడల్పు",
+  "printerWhatItPrints": "అది ఏమి ప్రింట్ చేస్తుంది",
+  "printerInUse": "వాడుకలో",
+  "printerRemoveConfirm": "{name} తొలగించాలా?",
+  "@printerRemoveConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "guestScanTitle": "ఆర్డర్ కోసం స్కాన్ చేయి",
+  "guestMenuTitle": "మెనూ",
+  "signInErrorNoUsername": "మీ యూజర్‌నేమ్ ఇవ్వండి.",
+  "signInErrorShortPin": "మీ పిన్ కనీసం 4 అంకెలు.",
+  "ticketSendCourseOnly": "{course} మాత్రమే పంపు",
+  "@ticketSendCourseOnly": {
+    "placeholders": {
+      "course": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketBackToFloor": "ఫ్లోర్‌కు తిరిగి",
+  "ticketCouldNotSend": "పంపలేకపోయింది: {error}",
+  "@ticketCouldNotSend": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketCouldNotCancel": "రద్దు చేయలేకపోయింది: {error}",
+  "@ticketCouldNotCancel": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketEmptyBill": "ఈ బిల్లులో ఇంకా ఏమీ లేదు",
+  "ticketVoided": "రద్దు చేయబడింది",
+  "ticketSavedNotSent": "ఇక్కడ సేవ్ అయింది — ఇంకా పంపలేదు",
+  "ticketQuantity": "పరిమాణం",
+  "ticketCourse": "కోర్సు",
+  "ticketRetry": "మళ్లీ ప్రయత్నం",
+  "kdsStatusQueued": "క్యూలో",
+  "kdsStatusPreparing": "తయారవుతోంది",
+  "kdsStatusReady": "సిద్ధం",
+  "outletTitle": "అవుట్‌లెట్",
+  "outletSwitch": "అవుట్‌లెట్ మార్చు",
+  "outletAll": "అన్ని అవుట్‌లెట్లు",
+  "settingsLanguage": "భాష",
+  "settingsLanguageHint": "ఈ పరికరం భాష",
+  "floorNoTablesHint": "మేనేజర్ ఫ్లోర్ → టేబుళ్లలో టేబుళ్లను జోడించవచ్చు. అప్పటివరకు మీరు టేకవే ఆర్డర్లు తీసుకోవచ్చు.",
+  "splitOwnBill": "లేదా ఎవరికైనా వారి సొంత బిల్ ఇవ్వండి",
+  "splitSeparateTax": "ప్రతి బిల్లుపై సర్వీస్, పన్ను విడివిడిగా లెక్కిస్తారు.",
+  "splitEvenTitle": "అందరూ తమ వాటా చెల్లించండి",
+  "splitEvenHint": "ఒక బిల్, సమానంగా విభజించు. ప్రతి వాటాను ప్రత్యేక చెల్లింపుగా తీసుకోండి.",
+  "kdsEmptyHint": "కౌంటర్ పంపగానే టిక్కెట్లు ఇక్కడ కనిపిస్తాయి.",
+  "settingsLanguageSystem": "పరికర భాష",
+  "invTitle": "స్టాక్",
+  "@invTitle": {
+    "description": "Inventory section title"
+  },
+  "invSubtitle": "చేతిలో ఉన్న స్టాక్, దాని విలువ, మళ్లీ ఏమి తెప్పించాలి.",
+  "@invSubtitle": {
+    "description": "Inventory section subtitle"
+  },
+  "invNewItem": "కొత్త వస్తువు",
+  "@invNewItem": {
+    "description": "New stock item button"
+  },
+  "invStockValue": "స్టాక్ విలువ",
+  "@invStockValue": {
+    "description": "Total stock value label"
+  },
+  "invLowStock": "తక్కువ స్టాక్",
+  "@invLowStock": {
+    "description": "Low stock section header"
+  },
+  "invLastRestock": "చివరి కొనుగోలు {date}",
+  "@invLastRestock": {
+    "description": "Last restock date, {date} placeholder",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "invNeedsReview": "సమీక్ష అవసరం",
+  "@invNeedsReview": {
+    "description": "Needs review flag"
+  },
+  "invLow": "తక్కువ",
+  "@invLow": {
+    "description": "Low badge"
+  },
+  "invBalance": "నిల్వ",
+  "@invBalance": {
+    "description": "Current balance label"
+  },
+  "invThreshold": "మళ్లీ తెప్పించే స్థాయి",
+  "@invThreshold": {
+    "description": "Reorder threshold label"
+  },
+  "invUnit": "యూనిట్",
+  "@invUnit": {
+    "description": "Unit label (kg, L, pcs)"
+  },
+  "invCostPerUnit": "{unit}కు ధర",
+  "@invCostPerUnit": {
+    "description": "Cost per unit, {unit} placeholder",
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "invActive": "చురుకుగా",
+  "@invActive": {
+    "description": "Active switch label"
+  },
+  "invPurchase": "కొనుగోలు",
+  "@invPurchase": {
+    "description": "Purchase action"
+  },
+  "invWastage": "వృథా",
+  "@invWastage": {
+    "description": "Wastage action"
+  },
+  "invAdjust": "సర్దుబాటు",
+  "@invAdjust": {
+    "description": "Adjust action"
+  },
+  "invQuantity": "పరిమాణం",
+  "@invQuantity": {
+    "description": "Quantity field label"
+  },
+  "invNote": "గమనిక",
+  "@invNote": {
+    "description": "Note field label"
+  },
+  "invEmpty": "ఇంకా స్టాక్ వస్తువులు లేవు",
+  "@invEmpty": {
+    "description": "Empty inventory title"
+  },
+  "invEmptyHint": "పిండి, పాలు, చికెన్ జోడించండి — వంటగదిలో ఉండేది.",
+  "@invEmptyHint": {
+    "description": "Empty inventory hint"
+  },
+  "invRecipe": "వంటకం",
+  "@invRecipe": {
+    "description": "Recipe section title"
+  },
+  "invRecipeHint": "ప్రతి సర్వింగ్‌కు ఏమి అవసరమో. వడ్డించగానే ఆటోమేటిక్‌గా తగ్గుతుంది.",
+  "@invRecipeHint": {
+    "description": "Recipe section hint"
+  },
+  "invAddIngredient": "పదార్థం జోడించండి",
+  "@invAddIngredient": {
+    "description": "Add ingredient button"
+  },
+  "invQtyPerServing": "సర్వింగ్‌కు",
+  "@invQtyPerServing": {
+    "description": "Quantity per serving label"
+  },
+  "invSaveItemFirst": "ముందు వస్తువును సేవ్ చేయండి, తర్వాత వంటకం జోడించండి.",
+  "@invSaveItemFirst": {
+    "description": "Recipe on unsaved item hint"
+  },
+  "invPurchaseTitle": "కొనుగోలు నమోదు చేయండి",
+  "@invPurchaseTitle": {
+    "description": "Purchase dialog title"
+  },
+  "invWastageTitle": "వృథాను నమోదు చేయండి",
+  "@invWastageTitle": {
+    "description": "Wastage dialog title"
+  },
+  "invAdjustTitle": "స్టాక్ సర్దుబాటు చేయండి",
+  "@invAdjustTitle": {
+    "description": "Adjust dialog title"
+  },
+  "invAdjustHint": "ఆడిట్ చేసిన సవరణలు — ఉదా. లెక్క తేడా.",
+  "@invAdjustHint": {
+    "description": "Adjust dialog hint"
+  },
+  "invPickIngredient": "పదార్థం ఎంచుకోండి",
+  "@invPickIngredient": {
+    "description": "Pick ingredient dialog title"
+  },
+  "invEdit": "సవరించు",
+  "@invEdit": {
+    "description": "Edit action"
+  }
+}

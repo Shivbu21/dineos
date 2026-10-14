@@ -1,0 +1,299 @@
+# Restaurant CMS — Build Plan
+
+> This document is the contract. If the code and this file disagree, this file wins
+> until it is deliberately updated.
+
+## 1. What this is
+
+A **free, self-hosted restaurant management system**. A restaurant downloads one
+installer, runs a setup wizard, and has a working POS, kitchen display, menu manager
+and sales reports on their own hardware.
+
+**Free forever means free forever.** No licence key, no account, no subscription,
+no telemetry, no paid tier, no "pro" upsell. The restaurant's data lives on the
+restaurant's machine.
+
+### The promise, and its one honest limit
+
+Free for the restaurant: yes, permanently. There is nothing they can be billed for.
+
+What costs *us* money, and never them:
+- Apple Developer Program, $99/yr — required to notarise macOS builds. Without it
+  macOS shows a Gatekeeper warning that users must right-click → Open past.
+- Windows code-signing certificate, ~$200-400/yr — without it SmartScreen warns
+  on first run.
+- Both are cosmetic-trust problems, not functional ones. We ship unsigned and
+  document the workaround until signing is worth paying for.
+
+## 2. Decisions already made
+
+| Question | Decision |
+|---|---|
+| Backend | **PocketBase** — single binary, no cloud account, no credit card |
+| Who installs it | **Both** — one-click installer for owners, docs + config for developers |
+| v1 product core | **Restaurant operations** — POS, KDS, menu, tables, staff, reports |
+| Old 2022 code | **Full restart** — new code and new design |
+
+The 2022 code (`customer_app`, `admin_panel`, `delivery_app`) is preserved on the
+`UI_Only` branch and pushed to origin. Recover any of it with
+`git checkout UI_Only -- <path>`. It is not carried forward.
+
+### Why PocketBase and not Firebase
+
+Firebase cannot deliver "free forever, they set it up themselves". Every restaurant
+would need their own Firebase project or we pay their bill; Cloud Functions require
+the Blaze plan with a card on file; `flutterfire configure` is a developer task.
+
+PocketBase is one binary containing auth, a database, realtime subscriptions, file
+storage and an admin UI. Download, run, done. And because it runs on a machine in
+the restaurant, **the POS keeps taking orders when their internet goes down** —
+which for a restaurant matters more than almost anything else.
+
+Pinned to a specific PocketBase version. It is still pre-1.0 (currently v0.40.x)
+and ships breaking changes between minor releases, so the version is locked in
+`server/VERSION` and only moved deliberately.
+
+## 3. Architecture
+
+### One app, three shells
+
+Not three separate downloads. **One Flutter binary**; the logged-in staff member's
+role decides which shell they get.
+
+- Waiter or cashier signs in → **POS**
+- Kitchen screen signs in → **KDS**
+- Owner or manager signs in → **Manager**
+
+One codebase, one installer, one thing to explain to a restaurant.
+
+### Repository layout
+
+```
+restaurant_cms/
+├── PLAN.md                  ← this file
+├── README.md
+├── server/
+│   ├── VERSION              ← pinned PocketBase version
+│   ├── pb_migrations/       ← JS migrations: the schema, version controlled
+│   ├── pb_hooks/            ← JS hooks: order numbers, totals, guards, audit
+│   └── fetch_pocketbase.sh  ← downloads the right binary per OS/arch
+├── app/
+│   └── lib/
+│       ├── core/            ← design system, router, DI, result types
+│       ├── data/            ← PocketBase client, models, repositories
+│       ├── features/
+│       │   ├── setup/       ← first-run wizard
+│       │   ├── auth/        ← staff sign-in, PIN lock
+│       │   ├── pos/         ← tables, order taking, payment
+│       │   ├── kds/         ← kitchen display
+│       │   ├── menu/        ← menu management
+│       │   ├── staff/       ← staff and roles
+│       │   ├── reports/     ← sales reporting
+│       │   └── settings/    ← restaurant, tax, printers
+│       └── main.dart
+├── installer/               ← macOS DMG, Windows NSIS, Linux AppImage
+└── docs/                    ← owner guide + developer guide
+```
+
+### How devices find the server
+
+The server runs on one machine on the restaurant's LAN. Tablets and the kitchen
+screen join over that LAN. Discovery, in order of preference:
+
+1. **mDNS auto-discovery** ✅ — the host announces itself as `_mise._tcp`
+   carrying the venue name, and the connect screen lists what answers. Silent
+   when nothing does: an empty "looking…" box on a network that blocks
+   multicast is just noise above the field that actually works.
+2. **A QR code** ✅ in Settings → This device, showing the LAN address rather
+   than a loopback nobody else can reach. Tablets scan it from the connect
+   screen, where a camera exists to point.
+3. **Typing the address** ✅, which never goes away. Multicast is blocked on
+   plenty of networks and cameras get refused; a setup that only works when
+   everything cooperates is not a setup.
+
+### Design system
+
+Warm neutrals rather than cool greys — a screen that sits in a dining room all
+evening should not read clinical. **Ember** is the brand colour and is reserved
+for identity and primary actions.
+
+Status colours deliberately avoid orange so an order's state can never be
+mistaken for a button: queued is neutral, preparing is **blue**, ready is
+**green**, and red is kept for trouble. Ticket ageing runs on a separate visual
+channel — it tints borders and timers, never status chips.
+
+Inter is bundled, not fetched, because nothing may load at runtime. Money always
+uses tabular figures so digits stop shifting as totals change.
+
+The two-channel rule proved itself on the kitchen display: a ticket's **border
+and timer** carry how long it has been waiting, while **dots and chips** carry
+what state each item is in. Because ageing never touches the status colours, a
+late ticket full of cooking items reads correctly at a glance — red frame, blue
+dots — instead of the two meanings fighting each other.
+
+### Reporting
+
+Takings are counted by **when a bill closed**, not when it was opened. A table
+seated before a shift began and settled during it is that shift's takings.
+
+Breakdowns are built from the same settled bills as the headline figures, so
+the parts always add up to the whole — the item values sum to gross sales, and
+they are meant to.
+
+### Non-negotiables
+
+- **Totals are computed server-side.** A POS must never let a tampered client
+  decide what a bill costs. Hooks recompute every total on write.
+- **Offline-tolerant.** Losing the network mid-service must not lose an order.
+  Adding to a bill keeps working and is queued to disk; the queue drains on its
+  own when the server answers again. Firing to the kitchen and settling a bill
+  deliberately do *not* work offline — the kitchen screen is the thing being
+  written to, and a total only the server computes cannot honestly be guessed
+  at on a tablet. Settling against a made-up number is how a restaurant loses
+  money.
+- **Realtime.** An order sent from the POS appears on the kitchen screen with no
+  refresh, no polling.
+- **Premium UI.** This is the thing a restaurant stares at for twelve hours a day.
+
+## 4. Data model
+
+PocketBase collections, defined as JS migrations so the schema is version-controlled
+and reproducible on a fresh install.
+
+| Collection | Holds |
+|---|---|
+| `restaurant` | Name, logo, address, phone, currency, tax rate, service charge |
+| `staff` | Auth collection — name, PIN, role, active |
+| `categories` | Name, sort order, image, active |
+| `menu_items` | Category, name, description, price, image, prep time, active |
+| `modifier_groups` | Name, min/max selectable, required |
+| `modifiers` | Group, name, price delta |
+| `tables` | Number, seats, zone, current status |
+| `orders` | Number, type, table, staff, status, money columns, timestamps |
+| `order_items` | Order, item, qty, unit price, modifiers, notes, item status |
+| `payments` | Order, method, amount, reference, staff |
+| `shifts` | Staff, open/close times, opening and closing cash, variance |
+| `printers` | Name, IP, port, role (receipt / kitchen), paper width |
+| `audit_log` | Who changed what, when — voids and discounts especially |
+
+## 5. Receipt printing
+
+Network thermal printers over **TCP port 9100** (ESC/POS) — what virtually every
+restaurant printer already speaks, with no driver to install. A printer is just
+an address and a paper width.
+
+Two things learned building it:
+
+**A browser cannot open a raw socket**, so the web build cannot print. It says so
+plainly rather than failing in a way that looks like a fault. The till runs on
+desktop or a tablet; web is for the back office.
+
+**Thermal printers speak code pages, not Unicode.** A symbol like ৳ prints as
+noise, so any non-ASCII currency symbol falls back to its three-letter code —
+`3035.34 BDT` rather than a mangled glyph. Every printable byte the builder emits
+is plain ASCII, and there is a test that holds it to that.
+
+## 6. Phases
+
+Each phase ends with something you can actually run and test.
+
+**Phase 0 — Foundation** ✅ *done*
+Repo restart, PocketBase bundle and fetch script, schema migrations, server-side
+money hooks, Flutter app skeleton, design system, staff auth, first-run setup
+wizard. Verified end to end: connect → set up → sign in → role shell, with the
+session surviving a restart. 27 automated checks passing across two suites.
+
+**Phase 1 — Menu and settings** ✅ *done*
+Manager shell with grouped navigation. Categories with drag-reordering and till
+colours; items with photos, tags, prep times and a sold-out ("86") toggle;
+modifier groups and their options; venue settings for name, currency, tax,
+service charge and receipt lines. All lists are realtime — a change on one
+device lands on the others without a refresh.
+*Test: build your real menu from scratch.*
+
+**Phase 2 — POS core** ✅ *done*
+Tables management, floor view with live bill totals per table, order taking with
+a modifier sheet, kitchen notes, quantities, send-to-kitchen, and voids that are
+recorded rather than silently deleted. Owners and managers get a shell switcher,
+because in a small restaurant the owner is also the waiter.
+*Test: take an order end to end.*
+
+Still to come here: split and merge tables, and moving a bill between tables
+(the repository supports the move; there is no UI for it yet).
+
+**Phase 3 — Kitchen display** ✅ *done*
+Tickets appear on the pass the moment the till sends them, sized to read from
+across a kitchen. Tapping an item walks it queued → cooking → ready; the ticket
+button plates the whole thing, then hands it to the floor and clears it. Timers
+count up from when the ticket was fired, and the card ages neutral → amber →
+red against the ten-minute target. A bill's status follows its lines, derived
+server-side so every terminal agrees.
+*Test: send an order from POS, watch it land in the kitchen instantly.*
+
+**Phase 4 — Payments, receipts, shifts** ✅ *done*
+Part payments that accumulate until a bill covers itself, cash with tendered and
+change, card and mobile with a reference. Discounts by percentage or amount,
+always with a reason, always audited. Receipts as ESC/POS over TCP 9100 with an
+exact on-screen preview. Shifts with an opening float, a counted close and the
+variance called out. A Z-report at close, and the same figures per day under
+Reports.
+*Test: close a bill and print a receipt.*
+
+Bills are reported by **when they closed**, not when they were opened. A table
+seated before a shift began and settled during it is that shift's takings;
+keying on creation credits the money to the wrong session and leaves the drawer
+looking short.
+
+**Phase 5 — Staff and reports** ✅ *done*
+Staff accounts with five roles, each described in plain English rather than by
+permission flags. A manager can reset a forgotten PIN without anyone opening the
+admin dashboard. Sales broken down by item, by who served it, and by hour, with
+a CSV export for the bookkeeper.
+*Test: add a waiter and let them sign in.*
+
+Two guards that cannot live in collection rules, so they live in hooks: the
+venue can never be left without an active owner, and a manager cannot reset an
+*owner's* PIN — otherwise resetting a PIN would be a way to seize the account
+above you.
+
+**Phase 6 — Packaging and distribution**
+macOS DMG, Windows installer, Linux AppImage, one-click setup, owner and developer
+docs, GitHub Releases, landing page on the portfolio.
+*Test: install it on a clean machine like a stranger would.*
+
+### Table-side ordering ✅ *done*
+A guest scans the QR on their table and orders from their own phone — a web
+page, not an app to install. It rides on the same server and port, so nothing is
+exposed to the internet and there is no second thing to run.
+
+Guests reach exactly three public routes; all fourteen collections stay
+staff-only. No price ever comes from the request. Their items land on the
+table's bill **unsent**, and a waiter fires them — a stranger on the wi-fi
+cannot put food on the pass.
+
+### Later, deliberately not in v1
+Public online ordering from outside the restaurant, delivery app and driver
+tracking, multi-branch, inventory and stock control, reservations.
+
+Ordering from home would need the restaurant's machine reachable from the
+internet — a tunnel, port forwarding or a cloud host. That trades away the
+offline guarantee and, depending on the route, the zero cost. Worth doing
+deliberately, not by drifting into it.
+
+The 2022 customer app was built first and had nothing to send orders to. Ops first
+this time; the customer app plugs into a system that already works.
+
+## 7. The name
+
+The product is **Mise**, from *mise en place* — everything in its place before
+service. It is the one French term every professional kitchen actually uses, so
+it reads as built by someone who knows restaurants, and it is distinctive enough
+to find in a search.
+
+`restaurant_cms` remains the repository name. The two do not need to match.
+
+Rejected, and why, so this is not relitigated: **Counter** and **Pass** are common
+English words — unsearchable, and already taken by other products. **Ember** and
+**Expo** collide with well-known developer tools, which matters when developers
+are half the audience. **Servewell** was fine but reads like legacy hospitality
+software.

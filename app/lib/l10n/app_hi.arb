@@ -1,0 +1,488 @@
+{
+  "@@locale": "hi",
+  "appTitle": "dineos",
+  "@appTitle": {
+    "description": "Nama produk. Jangan diterjemahkan."
+  },
+  "commonCancel": "रद्द करें",
+  "commonDelete": "हटाएं",
+  "commonRemove": "निकालें",
+  "commonClose": "बंद करें",
+  "commonDone": "हो गया",
+  "commonSave": "बदलाव सहेजें",
+  "commonAdd": "जोड़ें",
+  "commonName": "नाम",
+  "commonAddress": "पता",
+  "commonPort": "पोर्ट",
+  "commonPrice": "कीमत",
+  "commonTotal": "कुल",
+  "commonSubtotal": "उप-कुल",
+  "commonNote": "नोट",
+  "commonReason": "कारण",
+  "commonAmount": "राशि",
+  "commonReference": "संदर्भ",
+  "commonDescription": "विवरण",
+  "commonCategory": "श्रेणी",
+  "commonPhoto": "फोटो",
+  "commonOptions": "विकल्प",
+  "commonTags": "टैग",
+  "commonTryAgain": "पुनः प्रयास करें",
+  "commonCouldNotLoad": "लोड नहीं हो सका",
+  "commonTest": "टेस्ट",
+  "commonEarlier": "पहले",
+  "commonLater": "बाद में",
+  "commonAll": "सभी",
+  "commonOn": "चालू",
+  "commonOff": "बंद",
+  "signInTitle": "साइन इन",
+  "signInUsername": "यूज़रनेम",
+  "signInPin": "पिन",
+  "signInUseDifferentServer": "दूसरा सर्वर इस्तेमाल करें",
+  "connectTitle": "अपने सर्वर से जुड़ें",
+  "connectAction": "जुड़ें",
+  "connectOnThisNetwork": "इस नेटवर्क पर",
+  "connectSubtitle": "रेस्तरां प्रबंधन",
+  "connectSubtitleLong": "इस डिवाइस को अपना रेस्तरां चलाने वाले कंप्यूटर की ओर इंगित करें।",
+  "connectFooter": "हमेशा मुफ़्त। आपका डेटा आपकी अपनी मशीन पर रहता है।",
+  "connectServerHelper": "सर्वर इसी कंप्यूटर पर चला रहे हैं? इसे ऐसे ही रहने दें।",
+  "connectRunOnThisComputer": "रेस्तरां इसी कंप्यूटर पर चलाएं",
+  "connectRunOnThisComputerHint": "सब कुछ यहीं सेट हो जाएगा। टैबलेट और किचन स्क्रीन फिर इस मशीन से जुड़ेंगे।",
+  "connectScanCode": "कोड स्कैन करें",
+  "connectServerAddress": "सर्वर का पता",
+  "connectOr": "या",
+  "connectScanPointAtCode": "कोड की ओर इंगित करें",
+  "connectScanTypeInstead": "बजाय टाइप करें",
+  "setupTitle": "अपना रेस्तरां सेट करें",
+  "kdsOnThePass": "काउंटर पर",
+  "kdsNothingOnThePass": "काउंटर पर कुछ नहीं",
+  "kdsCouldNotUpdate": "अपडेट नहीं हो सका: {error}",
+  "@kdsCouldNotUpdate": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "navPos": "काउंटर",
+  "navKds": "रसोई",
+  "navManager": "प्रबंधक",
+  "navSignOut": "साइन आउट",
+  "navSwitchShell": "स्क्रीन बदलें",
+  "floorTitle": "फ्लोर",
+  "floorHint": "बिल खोलने या उठाने के लिए टेबल पर टैप करें।",
+  "floorNoTables": "कोई टेबल सेट नहीं",
+  "floorTakeaway": "टेकअवे",
+  "floorOpenBill": "बिल खोलें",
+  "floorHowManyGuests": "कितने मेहमान?",
+  "floorSeatTable": "{label} पर बैठाएं",
+  "@floorSeatTable": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "floorCouldNotOpen": "टेबल नहीं खुल सकी: {error}",
+  "@floorCouldNotOpen": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "floorCouldNotStart": "ऑर्डर शुरू नहीं हो सका: {error}",
+  "@floorCouldNotStart": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "floorInUse": "व्यस्त",
+  "orderBackToFloor": "फ्लोर पर वापस",
+  "orderNothingHere": "यहाँ कुछ नहीं",
+  "orderMenuEmpty": "मेनू खाली है",
+  "orderBillGone": "यह बिल चला गया",
+  "orderCouldNotAdd": "वह जोड़ा नहीं जा सका: {error}",
+  "@orderCouldNotAdd": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "orderSoldOut": "86",
+  "orderAddToBill": "बिल में जोड़ें",
+  "orderNoteForKitchen": "रसोई के लिए नोट",
+  "orderUpTo": "{count} तक",
+  "@orderUpTo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "moveBillTitle": "बिल #{number} ले जाएं",
+  "@moveBillTitle": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "moveBillNowhere": "इसे ले जाने के लिए और कोई जगह नहीं।",
+  "moveBillWhereTo": "कहाँ ले जाएं?",
+  "discountTitle": "छूट",
+  "discountAmountOff": "राशि में छूट",
+  "discountNewSubtotal": "नया उप-कुल",
+  "discountReasonHint": "इसी से सेवा और कर निकाला जाता है।",
+  "discountClear": "साफ़ करें",
+  "paymentTitle": "वे कैसे भुगतान कर रहे हैं?",
+  "paymentCashReceived": "नकद मिला",
+  "paymentChangeDue": "वापसी",
+  "paymentPaid": "भुगतान हो गया",
+  "paymentTake": "{amount} लें",
+  "@paymentTake": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentTakenSoFar": "अब तक लिया",
+  "paymentRemovePayment": "यह भुगतान हटाएं",
+  "paymentReceipt": "रसीद",
+  "receiptTitle": "रसीद",
+  "receiptPrintTo": "{printer} पर प्रिंट करें",
+  "@receiptPrintTo": {
+    "placeholders": {
+      "printer": {
+        "type": "String"
+      }
+    }
+  },
+  "shiftCloseTitle": "अपनी शिफ्ट बंद करें",
+  "shiftCashInDrawer": "दराज़ में नकद",
+  "shiftCashTaken": "ली गई नकद",
+  "shiftCounted": "गिना हुआ",
+  "shiftOpeningFloat": "शुरुआती रकम",
+  "shiftShouldBeInDrawer": "दराज़ में होनी चाहिए",
+  "shiftHereIsWhat": "यह रहा हिसाब।",
+  "shiftClosed": "शिफ्ट बंद",
+  "summaryTakings": "कमाई",
+  "summaryHowItAddsUp": "जोड़ कैसा बना",
+  "summaryHowItWasPaid": "भुगतान कैसे हुआ",
+  "summaryTheDrawer": "दराज़",
+  "summaryCancelled": "रद्द",
+  "menuItemsTitle": "आइटम",
+  "menuItemsSubtitle": "जो कुछ आप बेचते हैं, और उसकी कीमत।",
+  "menuItemsNew": "नया आइटम",
+  "menuItemsNone": "अभी कोई आइटम नहीं",
+  "menuItemsNoMatch": "कुछ मेल नहीं खाता",
+  "menuItemsAddFirst": "अपना पहला आइटम जोड़ें",
+  "menuItemsAddCategoryFirst": "पहले श्रेणी जोड़ें",
+  "menuCategoriesTitle": "श्रेणियाँ",
+  "menuCategoriesSubtitle": "आपके मेनू के भाग। काउंटर पर भी यही क्रम रहेगा।",
+  "menuCategoriesNew": "नई श्रेणी",
+  "menuCategoriesNone": "अभी कोई श्रेणी नहीं",
+  "menuCategoriesAddFirst": "अपनी पहली श्रेणी जोड़ें",
+  "menuCategoriesHidden": "छिपा हुआ",
+  "menuCategoriesTileColour": "टाइल का रंग",
+  "menuCategoriesTileColourHint": "काउंटर पर दिखता है ताकि स्टाफ जल्दी ढूंढ सके।",
+  "menuCategoriesVisible": "काउंटर पर दिखे",
+  "menuCategoriesStation": "इसे कौन बनाता है",
+  "menuCategoriesStationHint": "इस भाग के ऑर्डर उसी स्टेशन पर प्रिंट होंगे।",
+  "menuItemOnTheMenu": "मेनू पर है",
+  "menuItemInStock": "स्टॉक में",
+  "menuItemCode": "आइटम कोड",
+  "menuItemPrepTime": "तैयारी का समय",
+  "modifiersTitle": "मॉडिफायर",
+  "modifiersSubtitle": "आइटमों से जोड़े जा सकने वाले विकल्प। एक बार बनाएं, हर जगह इस्तेमाल करें।",
+  "modifiersNewGroup": "नया समूह",
+  "modifiersNone": "अभी कोई मॉडिफायर समूह नहीं",
+  "modifiersCreateFirst": "अपना पहला समूह बनाएं",
+  "modifiersAddOption": "विकल्प जोड़ें",
+  "modifiersNoOptions": "अभी कोई विकल्प नहीं।",
+  "modifiersAllowMoreThanOne": "एक से ज़्यादा चुनने दें",
+  "modifiersMustBeAnswered": "जवाब ज़रूरी है",
+  "modifiersMaxSelectable": "अधिकतम चुने जा सकने वाले",
+  "modifiersPriceChange": "कीमत में बदलाव",
+  "modifiersOffered": "उपलब्ध",
+  "tablesTitle": "टेबल",
+  "tablesSubtitle": "आपका फ्लोर। कमरे में हिस्से हों तो ज़ोन में बाँटें।",
+  "tablesNew": "नई टेबल",
+  "tablesNone": "अभी कोई टेबल नहीं",
+  "tablesAddFirst": "अपनी पहली टेबल जोड़ें",
+  "tablesNameOrNumber": "नाम या नंबर",
+  "tablesSeats": "सीटें",
+  "tablesZone": "ज़ोन",
+  "tablesInUse": "इस्तेमाल में",
+  "tablesCodes": "टेबल कोड",
+  "tablesCodesNone": "अभी कोई टेबल इस्तेमाल में नहीं।",
+  "tablesDeleteConfirm": "{label} हटाएं?",
+  "@tablesDeleteConfirm": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "staffTitle": "स्टाफ",
+  "staffSubtitle": "कौन साइन इन कर सकता है, और उसे क्या करने की अनुमति है।",
+  "staffAddSomeone": "किसी को जोड़ें",
+  "staffNobodyYet": "अभी कोई नहीं",
+  "staffCanSignIn": "साइन इन कर सकता है",
+  "staffWhatTheyCanDo": "वे क्या कर सकते हैं",
+  "staffYou": "आप",
+  "staffCannotDisableSelf": "आप अपना खाता बंद नहीं कर सकते।",
+  "staffGiveNewPin": "उन्हें नया पिन दें",
+  "staffNewPinFor": "{name} के लिए नया पिन",
+  "@staffNewPinFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "staffSetPin": "पिन सेट करें",
+  "staffRemoveConfirm": "{name} हटाएं?",
+  "@staffRemoveConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reportsTitle": "रिपोर्ट",
+  "reportsSubtitle": "हर दिन का हिसाब।",
+  "reportsWhatSold": "क्या बिका",
+  "reportsWhoServedIt": "किसने परोसा",
+  "reportsByHour": "प्रति घंटा",
+  "reportsExportCsv": "CSV निर्यात करें",
+  "reportsSaved": "रिपोर्ट सहेजी गई।",
+  "reportsCouldNotSave": "सहेजा नहीं जा सका: {error}",
+  "@reportsCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "activityTitle": "गतिविधि",
+  "activitySubtitle": "छूट, रद्द और निरस्त — हर एक के साथ नाम।",
+  "activityMoneyLeavingOnly": "केवल जाने वाला पैसा",
+  "settingsTitle": "सेटिंग्स",
+  "settingsRestaurant": "रेस्तरां",
+  "settingsRestaurantHint": "आपका रेस्तरां खुद को कैसे बताता है और क्या शुल्क लेता है।",
+  "settingsCharges": "शुल्क",
+  "settingsCurrency": "मुद्रा",
+  "settingsTaxRate": "कर की दर",
+  "settingsTaxIncluded": "मेनू की कीमतों में कर शामिल",
+  "settingsServiceCharge": "सेवा शुल्क",
+  "settingsPrinters": "प्रिंटर",
+  "settingsReceipts": "रसीदें",
+  "settingsHeader": "हेडर",
+  "settingsFooter": "फुटर",
+  "settingsServer": "सर्वर",
+  "settingsThisDevice": "यह डिवाइस",
+  "settingsAddTablet": "टैबलेट जोड़ें",
+  "settingsSignOut": "साइन आउट",
+  "settingsDisconnect": "डिस्कनेक्ट करें",
+  "settingsDisconnectConfirm": "इस डिवाइस को डिस्कनेक्ट करें?",
+  "printerNew": "प्रिंटर जोड़ें",
+  "printerPaperWidth": "कागज़ की चौड़ाई",
+  "printerWhatItPrints": "यह क्या प्रिंट करता है",
+  "printerInUse": "इस्तेमाल में",
+  "printerRemoveConfirm": "{name} हटाएं?",
+  "@printerRemoveConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "guestScanTitle": "ऑर्डर के लिए स्कैन करें",
+  "guestMenuTitle": "मेनू",
+  "signInErrorNoUsername": "अपना यूज़रनेम डालें।",
+  "signInErrorShortPin": "आपका पिन कम से कम 4 अंकों का है।",
+  "ticketSendCourseOnly": "केवल {course} भेजें",
+  "@ticketSendCourseOnly": {
+    "placeholders": {
+      "course": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketBackToFloor": "फ्लोर पर वापस",
+  "ticketCouldNotSend": "भेजा नहीं जा सका: {error}",
+  "@ticketCouldNotSend": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketCouldNotCancel": "रद्द नहीं हो सका: {error}",
+  "@ticketCouldNotCancel": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketEmptyBill": "इस बिल में अभी कुछ नहीं",
+  "ticketVoided": "रद्द किया गया",
+  "ticketSavedNotSent": "यहाँ सहेजा गया — अभी भेजा नहीं",
+  "ticketQuantity": "मात्रा",
+  "ticketCourse": "कोर्स",
+  "ticketRetry": "पुनः प्रयास",
+  "kdsStatusQueued": "कतार में",
+  "kdsStatusPreparing": "बन रहा है",
+  "kdsStatusReady": "तैयार",
+  "outletTitle": "आउटलेट",
+  "outletSwitch": "आउटलेट बदलें",
+  "outletAll": "सभी आउटलेट",
+  "settingsLanguage": "भाषा",
+  "settingsLanguageHint": "इस डिवाइस की भाषा",
+  "floorNoTablesHint": "प्रबंधक फ्लोर → टेबल में टेबल जोड़ सकता है। तब तक आप टेकअवे ऑर्डर ले सकते हैं।",
+  "splitOwnBill": "या किसी को अपना अलग बिल दें",
+  "splitSeparateTax": "हर बिल पर सेवा और कर अलग-अलग निकाला जाता है।",
+  "splitEvenTitle": "सब अपना हिस्सा दें",
+  "splitEvenHint": "एक बिल, बराबर बाँटा। हर हिस्से को अलग भुगतान लें।",
+  "kdsEmptyHint": "काउंटर भेजते ही टिकट यहाँ दिखते हैं।",
+  "settingsLanguageSystem": "डिवाइस की भाषा",
+  "invTitle": "इन्वेंटरी",
+  "@invTitle": {
+    "description": "Inventory section title"
+  },
+  "invSubtitle": "मौजूदा स्टॉक, उसकी कीमत, और क्या मंगवाना है।",
+  "@invSubtitle": {
+    "description": "Inventory section subtitle"
+  },
+  "invNewItem": "नया आइटम",
+  "@invNewItem": {
+    "description": "New stock item button"
+  },
+  "invStockValue": "स्टॉक मूल्य",
+  "@invStockValue": {
+    "description": "Total stock value label"
+  },
+  "invLowStock": "कम स्टॉक",
+  "@invLowStock": {
+    "description": "Low stock section header"
+  },
+  "invLastRestock": "अंतिम खरीद {date}",
+  "@invLastRestock": {
+    "description": "Last restock date, {date} placeholder",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "invNeedsReview": "समीक्षा आवश्यक",
+  "@invNeedsReview": {
+    "description": "Needs review flag"
+  },
+  "invLow": "कम",
+  "@invLow": {
+    "description": "Low badge"
+  },
+  "invBalance": "शेष",
+  "@invBalance": {
+    "description": "Current balance label"
+  },
+  "invThreshold": "इस स्तर पर मंगवाएं",
+  "@invThreshold": {
+    "description": "Reorder threshold label"
+  },
+  "invUnit": "इकाई",
+  "@invUnit": {
+    "description": "Unit label (kg, L, pcs)"
+  },
+  "invCostPerUnit": "{unit} प्रति लागत",
+  "@invCostPerUnit": {
+    "description": "Cost per unit, {unit} placeholder",
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "invActive": "सक्रिय",
+  "@invActive": {
+    "description": "Active switch label"
+  },
+  "invPurchase": "खरीद",
+  "@invPurchase": {
+    "description": "Purchase action"
+  },
+  "invWastage": "बर्बादी",
+  "@invWastage": {
+    "description": "Wastage action"
+  },
+  "invAdjust": "समायोजन",
+  "@invAdjust": {
+    "description": "Adjust action"
+  },
+  "invQuantity": "मात्रा",
+  "@invQuantity": {
+    "description": "Quantity field label"
+  },
+  "invNote": "नोट",
+  "@invNote": {
+    "description": "Note field label"
+  },
+  "invEmpty": "अभी कोई स्टॉक आइटम नहीं",
+  "@invEmpty": {
+    "description": "Empty inventory title"
+  },
+  "invEmptyHint": "आटा, दूध, चिकन जोड़ें — रसोई में जो भी रखा जाता है।",
+  "@invEmptyHint": {
+    "description": "Empty inventory hint"
+  },
+  "invRecipe": "रेसिपी",
+  "@invRecipe": {
+    "description": "Recipe section title"
+  },
+  "invRecipeHint": "प्रत्येक सर्विंग में क्या लगता है। परोसते ही अपने आप कटेगा।",
+  "@invRecipeHint": {
+    "description": "Recipe section hint"
+  },
+  "invAddIngredient": "सामग्री जोड़ें",
+  "@invAddIngredient": {
+    "description": "Add ingredient button"
+  },
+  "invQtyPerServing": "प्रति सर्विंग",
+  "@invQtyPerServing": {
+    "description": "Quantity per serving label"
+  },
+  "invSaveItemFirst": "पहले आइटम सहेजें, फिर रेसिपी जोड़ें।",
+  "@invSaveItemFirst": {
+    "description": "Recipe on unsaved item hint"
+  },
+  "invPurchaseTitle": "खरीद दर्ज करें",
+  "@invPurchaseTitle": {
+    "description": "Purchase dialog title"
+  },
+  "invWastageTitle": "बर्बादी दर्ज करें",
+  "@invWastageTitle": {
+    "description": "Wastage dialog title"
+  },
+  "invAdjustTitle": "स्टॉक समायोजित करें",
+  "@invAdjustTitle": {
+    "description": "Adjust dialog title"
+  },
+  "invAdjustHint": "लेखापरीक्षित सुधार — जैसे गिनती में अंतर।",
+  "@invAdjustHint": {
+    "description": "Adjust dialog hint"
+  },
+  "invPickIngredient": "सामग्री चुनें",
+  "@invPickIngredient": {
+    "description": "Pick ingredient dialog title"
+  },
+  "invEdit": "संपादित करें",
+  "@invEdit": {
+    "description": "Edit action"
+  }
+}

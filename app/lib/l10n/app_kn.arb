@@ -1,0 +1,488 @@
+{
+  "@@locale": "kn",
+  "appTitle": "dineos",
+  "@appTitle": {
+    "description": "Nama produk. Jangan diterjemahkan."
+  },
+  "commonCancel": "ರದ್ದುಮಾಡಿ",
+  "commonDelete": "ಅಳಿಸಿ",
+  "commonRemove": "ತೆಗೆದುಹಾಕಿ",
+  "commonClose": "ಮುಚ್ಚಿ",
+  "commonDone": "ಆಯಿತು",
+  "commonSave": "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಿ",
+  "commonAdd": "ಸೇರಿಸಿ",
+  "commonName": "ಹೆಸರು",
+  "commonAddress": "ವಿಳಾಸ",
+  "commonPort": "ಪೋರ್ಟ್",
+  "commonPrice": "ಬೆಲೆ",
+  "commonTotal": "ಒಟ್ಟು",
+  "commonSubtotal": "ಉಪ ಮೊತ್ತ",
+  "commonNote": "ಟಿಪ್ಪಣಿ",
+  "commonReason": "ಕಾರಣ",
+  "commonAmount": "ಮೊತ್ತ",
+  "commonReference": "ಉಲ್ಲೇಖ",
+  "commonDescription": "ವಿವರಣೆ",
+  "commonCategory": "ವರ್ಗ",
+  "commonPhoto": "ಫೋಟೋ",
+  "commonOptions": "ಆಯ್ಕೆಗಳು",
+  "commonTags": "ಟ್ಯಾಗ್‌ಗಳು",
+  "commonTryAgain": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+  "commonCouldNotLoad": "ಲೋಡ್ ಮಾಡಲಾಗಲಿಲ್ಲ",
+  "commonTest": "ಪರೀಕ್ಷೆ",
+  "commonEarlier": "ಮೊದಲು",
+  "commonLater": "ನಂತರ",
+  "commonAll": "ಎಲ್ಲಾ",
+  "commonOn": "ಆನ್",
+  "commonOff": "ಆಫ್",
+  "signInTitle": "ಸೈನ್ ಇನ್",
+  "signInUsername": "ಬಳಕೆದಾರ ಹೆಸರು",
+  "signInPin": "ಪಿನ್",
+  "signInUseDifferentServer": "ಬೇರೆ ಸರ್ವರ್ ಬಳಸಿ",
+  "connectTitle": "ನಿಮ್ಮ ಸರ್ವರ್‌ಗೆ ಸಂಪರ್ಕಿಸಿ",
+  "connectAction": "ಸಂಪರ್ಕಿಸಿ",
+  "connectOnThisNetwork": "ಈ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿ",
+  "connectSubtitle": "ರೆಸ್ಟೋರೆಂಟ್ ನಿರ್ವಹಣೆ",
+  "connectSubtitleLong": "ನಿಮ್ಮ ರೆಸ್ಟೋರೆಂಟ್ ನಡೆಸುವ ಕಂಪ್ಯೂಟರ್ ಕಡೆಗೆ ಈ ಸಾಧನವನ್ನು ತೋರಿಸಿ.",
+  "connectFooter": "ಯಾವಾಗಲೂ ಉಚಿತ. ನಿಮ್ಮ ಡೇಟಾ ನಿಮ್ಮದೇ ಯಂತ್ರದಲ್ಲಿ ಇರುತ್ತದೆ.",
+  "connectServerHelper": "ಸರ್ವರ್ ಅನ್ನು ಈ ಕಂಪ್ಯೂಟರ್‌ನಲ್ಲಿಯೇ ಚಲಾಯಿಸುತ್ತಿದ್ದೀರಾ? ಹಾಗೆಯೇ ಬಿಡಿ.",
+  "connectRunOnThisComputer": "ರೆಸ್ಟೋರೆಂಟ್ ಅನ್ನು ಈ ಕಂಪ್ಯೂಟರ್‌ನಲ್ಲಿಯೇ ನಡೆಸಿ",
+  "connectRunOnThisComputerHint": "ಎಲ್ಲವೂ ಇಲ್ಲಿಯೇ ಸಿದ್ಧವಾಗುತ್ತದೆ. ಟ್ಯಾಬ್ಲೆಟ್‌ಗಳು ಮತ್ತು ಅಡುಗೆಮನೆ ಪರದೆ ಈ ಯಂತ್ರಕ್ಕೆ ಸಂಪರ್ಕಗೊಳ್ಳುತ್ತವೆ.",
+  "connectScanCode": "ಕೋಡ್ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ",
+  "connectServerAddress": "ಸರ್ವರ್ ವಿಳಾಸ",
+  "connectOr": "ಅಥವಾ",
+  "connectScanPointAtCode": "ಕೋಡ್ ಕಡೆಗೆ ತೋರಿಸಿ",
+  "connectScanTypeInstead": "ಬದಲಾಗಿ ಟೈಪ್ ಮಾಡಿ",
+  "setupTitle": "ನಿಮ್ಮ ರೆಸ್ಟೋರೆಂಟ್ ಸಿದ್ಧಪಡಿಸಿ",
+  "kdsOnThePass": "ಪಾಸ್‌ನಲ್ಲಿ",
+  "kdsNothingOnThePass": "ಪಾಸ್‌ನಲ್ಲಿ ಏನೂ ಇಲ್ಲ",
+  "kdsCouldNotUpdate": "ನವೀಕರಿಸಲಾಗಲಿಲ್ಲ: {error}",
+  "@kdsCouldNotUpdate": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "navPos": "ಕೌಂಟರ್",
+  "navKds": "ಅಡುಗೆಮನೆ",
+  "navManager": "ವ್ಯವಸ್ಥಾಪಕ",
+  "navSignOut": "ಸೈನ್ ಔಟ್",
+  "navSwitchShell": "ಪರದೆ ಬದಲಾಯಿಸಿ",
+  "floorTitle": "ನೆಲ",
+  "floorHint": "ಬಿಲ್ ತೆರೆಯಲು ಅಥವಾ ಎತ್ತಿಕೊಳ್ಳಲು ಟೇಬಲ್ ಒತ್ತಿ.",
+  "floorNoTables": "ಟೇಬಲ್‌ಗಳನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ",
+  "floorTakeaway": "ಟೇಕ್‌ಅವೇ",
+  "floorOpenBill": "ಬಿಲ್ ತೆರೆಯಿರಿ",
+  "floorHowManyGuests": "ಎಷ್ಟು ಅತಿಥಿಗಳು?",
+  "floorSeatTable": "{label} ನಲ್ಲಿ ಕೂರಿಸಿ",
+  "@floorSeatTable": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "floorCouldNotOpen": "ಟೇಬಲ್ ತೆರೆಯಲಾಗಲಿಲ್ಲ: {error}",
+  "@floorCouldNotOpen": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "floorCouldNotStart": "ಆರ್ಡರ್ ಪ್ರಾರಂಭಿಸಲಾಗಲಿಲ್ಲ: {error}",
+  "@floorCouldNotStart": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "floorInUse": "ಬಳಕೆಯಲ್ಲಿ",
+  "orderBackToFloor": "ನೆಲಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+  "orderNothingHere": "ಇಲ್ಲಿ ಏನೂ ಇಲ್ಲ",
+  "orderMenuEmpty": "ಮೆನು ಖಾಲಿಯಿದೆ",
+  "orderBillGone": "ಈ ಬಿಲ್ ಹೋಗಿದೆ",
+  "orderCouldNotAdd": "ಅದನ್ನು ಸೇರಿಸಲಾಗಲಿಲ್ಲ: {error}",
+  "@orderCouldNotAdd": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "orderSoldOut": "86",
+  "orderAddToBill": "ಬಿಲ್‌ಗೆ ಸೇರಿಸಿ",
+  "orderNoteForKitchen": "ಅಡುಗೆಮನೆಗೆ ಟಿಪ್ಪಣಿ",
+  "orderUpTo": "{count} ವರೆಗೆ",
+  "@orderUpTo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "moveBillTitle": "ಬಿಲ್ #{number} ಸರಿಸಿ",
+  "@moveBillTitle": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "moveBillNowhere": "ಅದನ್ನು ಸರಿಸಲು ಬೇರೆಲ್ಲಿಯೂ ಇಲ್ಲ.",
+  "moveBillWhereTo": "ಎಲ್ಲಿಗೆ ಸರಿಸುವುದು?",
+  "discountTitle": "ರಿಯಾಯಿತಿ",
+  "discountAmountOff": "ಮೊತ್ತದಲ್ಲಿ ರಿಯಾಯಿತಿ",
+  "discountNewSubtotal": "ಹೊಸ ಉಪ ಮೊತ್ತ",
+  "discountReasonHint": "ಇದರಿಂದಲೇ ಸೇವಾ ಶುಲ್ಕ ಮತ್ತು ತೆರಿಗೆ ಲೆಕ್ಕ.",
+  "discountClear": "ತೆರವುಗೊಳಿಸಿ",
+  "paymentTitle": "ಅವರು ಹೇಗೆ ಪಾವತಿಸುತ್ತಿದ್ದಾರೆ?",
+  "paymentCashReceived": "ನಗದು ಸ್ವೀಕರಿಸಲಾಗಿದೆ",
+  "paymentChangeDue": "ಹಿಂದಿರುಗಿಸಬೇಕಾದ",
+  "paymentPaid": "ಪಾವತಿಸಲಾಗಿದೆ",
+  "paymentTake": "{amount} ತೆಗೆದುಕೊಳ್ಳಿ",
+  "@paymentTake": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentTakenSoFar": "ಇಲ್ಲಿಯವರೆಗೆ ತೆಗೆದುಕೊಂಡದ್ದು",
+  "paymentRemovePayment": "ಈ ಪಾವತಿಯನ್ನು ತೆಗೆದುಹಾಕಿ",
+  "paymentReceipt": "ರಸೀದಿ",
+  "receiptTitle": "ರಸೀದಿ",
+  "receiptPrintTo": "{printer} ನಲ್ಲಿ ಮುದ್ರಿಸಿ",
+  "@receiptPrintTo": {
+    "placeholders": {
+      "printer": {
+        "type": "String"
+      }
+    }
+  },
+  "shiftCloseTitle": "ನಿಮ್ಮ ಶಿಫ್ಟ್ ಮುಗಿಸಿ",
+  "shiftCashInDrawer": "ಡ್ರಾಯರ್‌ನಲ್ಲಿ ನಗದು",
+  "shiftCashTaken": "ತೆಗೆದುಕೊಂಡ ನಗದು",
+  "shiftCounted": "ಎಣಿಸಿದ",
+  "shiftOpeningFloat": "ಆರಂಭಿಕ ಮೊತ್ತ",
+  "shiftShouldBeInDrawer": "ಡ್ರಾಯರ್‌ನಲ್ಲಿ ಇರಬೇಕಾದ್ದು",
+  "shiftHereIsWhat": "ಲೆಕ್ಕ ಇಲ್ಲಿದೆ.",
+  "shiftClosed": "ಶಿಫ್ಟ್ ಮುಗಿಯಿತು",
+  "summaryTakings": "ಆದಾಯ",
+  "summaryHowItAddsUp": "ಒಟ್ಟು ಹೇಗೆ ಬಂತು",
+  "summaryHowItWasPaid": "ಹೇಗೆ ಪಾವತಿಸಲಾಯಿತು",
+  "summaryTheDrawer": "ಡ್ರಾಯರ್",
+  "summaryCancelled": "ರದ್ದು",
+  "menuItemsTitle": "ಐಟಂಗಳು",
+  "menuItemsSubtitle": "ನೀವು ಮಾರುವುದೆಲ್ಲವೂ, ಅದರ ಬೆಲೆಯೊಂದಿಗೆ.",
+  "menuItemsNew": "ಹೊಸ ಐಟಂ",
+  "menuItemsNone": "ಇನ್ನೂ ಯಾವುದೇ ಐಟಂಗಳಿಲ್ಲ",
+  "menuItemsNoMatch": "ಹೊಂದಾಣಿಕೆಯಾಗಲಿಲ್ಲ",
+  "menuItemsAddFirst": "ನಿಮ್ಮ ಮೊದಲ ಐಟಂ ಸೇರಿಸಿ",
+  "menuItemsAddCategoryFirst": "ಮೊದಲು ವರ್ಗ ಸೇರಿಸಿ",
+  "menuCategoriesTitle": "ವರ್ಗಗಳು",
+  "menuCategoriesSubtitle": "ನಿಮ್ಮ ಮೆನುವಿನ ಭಾಗಗಳು. ಕೌಂಟರ್‌ನಲ್ಲೂ ಇದೇ ಕ್ರಮ.",
+  "menuCategoriesNew": "ಹೊಸ ವರ್ಗ",
+  "menuCategoriesNone": "ಇನ್ನೂ ಯಾವುದೇ ವರ್ಗಗಳಿಲ್ಲ",
+  "menuCategoriesAddFirst": "ನಿಮ್ಮ ಮೊದಲ ವರ್ಗ ಸೇರಿಸಿ",
+  "menuCategoriesHidden": "ಮರೆಮಾಡಲಾಗಿದೆ",
+  "menuCategoriesTileColour": "ಟೈಲ್ ಬಣ್ಣ",
+  "menuCategoriesTileColourHint": "ಸಿಬ್ಬಂದಿ ಬೇಗ ಹುಡುಕಲು ಕೌಂಟರ್‌ನಲ್ಲಿ ತೋರಿಸುತ್ತದೆ.",
+  "menuCategoriesVisible": "ಕೌಂಟರ್‌ನಲ್ಲಿ ಗೋಚರಿಸುತ್ತದೆ",
+  "menuCategoriesStation": "ಇದನ್ನು ಮಾಡುವವರು",
+  "menuCategoriesStationHint": "ಈ ವಿಭಾಗದ ಆರ್ಡರ್‌ಗಳು ಆ ನಿಲ್ದಾಣದಲ್ಲಿ ಮುದ್ರಣವಾಗುತ್ತವೆ.",
+  "menuItemOnTheMenu": "ಮೆನುವಿನಲ್ಲಿದೆ",
+  "menuItemInStock": "ದಾಸ್ತಾನಿನಲ್ಲಿ",
+  "menuItemCode": "ಐಟಂ ಕೋಡ್",
+  "menuItemPrepTime": "ತಯಾರಿ ಸಮಯ",
+  "modifiersTitle": "ಮಾಡಿಫೈಯರ್‌ಗಳು",
+  "modifiersSubtitle": "ಐಟಂಗಳಿಗೆ ಜೋಡಿಸಬಹುದಾದ ಆಯ್ಕೆಗಳು. ಒಮ್ಮೆ ರಚಿಸಿ ಎಲ್ಲೆಡೆ ಬಳಸಿ.",
+  "modifiersNewGroup": "ಹೊಸ ಗುಂಪು",
+  "modifiersNone": "ಇನ್ನೂ ಯಾವುದೇ ಮಾಡಿಫೈಯರ್ ಗುಂಪುಗಳಿಲ್ಲ",
+  "modifiersCreateFirst": "ನಿಮ್ಮ ಮೊದಲ ಗುಂಪು ರಚಿಸಿ",
+  "modifiersAddOption": "ಆಯ್ಕೆ ಸೇರಿಸಿ",
+  "modifiersNoOptions": "ಇನ್ನೂ ಯಾವುದೇ ಆಯ್ಕೆಗಳಿಲ್ಲ.",
+  "modifiersAllowMoreThanOne": "ಒಂದಕ್ಕಿಂತ ಹೆಚ್ಚು ಅನುಮತಿಸಿ",
+  "modifiersMustBeAnswered": "ಉತ್ತರ ಕಡ್ಡಾಯ",
+  "modifiersMaxSelectable": "ಆಯ್ಕೆ ಮಾಡಬಹುದಾದ ಗರಿಷ್ಠ",
+  "modifiersPriceChange": "ಬೆಲೆ ಬದಲಾವಣೆ",
+  "modifiersOffered": "ಲಭ್ಯವಿದೆ",
+  "tablesTitle": "ಟೇಬಲ್‌ಗಳು",
+  "tablesSubtitle": "ನಿಮ್ಮ ನೆಲ. ಕೋಣೆಯಲ್ಲಿ ಭಾಗಗಳಿದ್ದರೆ ವಲಯಗಳಾಗಿ ವಿಂಗಡಿಸಿ.",
+  "tablesNew": "ಹೊಸ ಟೇಬಲ್",
+  "tablesNone": "ಇನ್ನೂ ಯಾವುದೇ ಟೇಬಲ್‌ಗಳಿಲ್ಲ",
+  "tablesAddFirst": "ನಿಮ್ಮ ಮೊದಲ ಟೇಬಲ್ ಸೇರಿಸಿ",
+  "tablesNameOrNumber": "ಹೆಸರು ಅಥವಾ ಸಂಖ್ಯೆ",
+  "tablesSeats": "ಆಸನಗಳು",
+  "tablesZone": "ವಲಯ",
+  "tablesInUse": "ಬಳಕೆಯಲ್ಲಿದೆ",
+  "tablesCodes": "ಟೇಬಲ್ ಕೋಡ್‌ಗಳು",
+  "tablesCodesNone": "ಇನ್ನೂ ಯಾವುದೇ ಟೇಬಲ್‌ಗಳು ಬಳಕೆಯಲ್ಲಿಲ್ಲ.",
+  "tablesDeleteConfirm": "{label} ಅಳಿಸಬೇಕೇ?",
+  "@tablesDeleteConfirm": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "staffTitle": "ಸಿಬ್ಬಂದಿ",
+  "staffSubtitle": "ಯಾರು ಸೈನ್ ಇನ್ ಮಾಡಬಹುದು, ಅವರಿಗೆ ಏನು ಅನುಮತಿ.",
+  "staffAddSomeone": "ಒಬ್ಬರನ್ನು ಸೇರಿಸಿ",
+  "staffNobodyYet": "ಇನ್ನೂ ಯಾರೂ ಇಲ್ಲ",
+  "staffCanSignIn": "ಸೈನ್ ಇನ್ ಮಾಡಬಹುದು",
+  "staffWhatTheyCanDo": "ಅವರು ಏನು ಮಾಡಬಹುದು",
+  "staffYou": "ನೀವು",
+  "staffCannotDisableSelf": "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ನೀವೇ ಆಫ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ.",
+  "staffGiveNewPin": "ಅವರಿಗೆ ಹೊಸ ಪಿನ್ ನೀಡಿ",
+  "staffNewPinFor": "{name} ಗಾಗಿ ಹೊಸ ಪಿನ್",
+  "@staffNewPinFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "staffSetPin": "ಪಿನ್ ಹೊಂದಿಸಿ",
+  "staffRemoveConfirm": "{name} ತೆಗೆದುಹಾಕಬೇಕೇ?",
+  "@staffRemoveConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reportsTitle": "ವರದಿಗಳು",
+  "reportsSubtitle": "ಪ್ರತಿ ದಿನದ ಲೆಕ್ಕ.",
+  "reportsWhatSold": "ಏನು ಮಾರಾಟವಾಯಿತು",
+  "reportsWhoServedIt": "ಯಾರು ಬಡಿಸಿದರು",
+  "reportsByHour": "ಗಂಟೆವಾರು",
+  "reportsExportCsv": "CSV ರಫ್ತು",
+  "reportsSaved": "ವರದಿ ಉಳಿಸಲಾಗಿದೆ.",
+  "reportsCouldNotSave": "ಉಳಿಸಲಾಗಲಿಲ್ಲ: {error}",
+  "@reportsCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "activityTitle": "ಚಟುವಟಿಕೆ",
+  "activitySubtitle": "ರಿಯಾಯಿತಿ, ರದ್ದತಿಗಳು — ಪ್ರತಿಯೊಂದರೊಂದಿಗೆ ಹೆಸರು.",
+  "activityMoneyLeavingOnly": "ಹೊರಹೋಗುವ ಹಣ ಮಾತ್ರ",
+  "settingsTitle": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
+  "settingsRestaurant": "ರೆಸ್ಟೋರೆಂಟ್",
+  "settingsRestaurantHint": "ನಿಮ್ಮ ರೆಸ್ಟೋರೆಂಟ್ ತನ್ನನ್ನು ಹೇಗೆ ಗುರುತಿಸಿಕೊಳ್ಳುತ್ತದೆ ಮತ್ತು ಏನು ಶುಲ್ಕ ವಿಧಿಸುತ್ತದೆ.",
+  "settingsCharges": "ಶುಲ್ಕಗಳು",
+  "settingsCurrency": "ಕರೆನ್ಸಿ",
+  "settingsTaxRate": "ತೆರಿಗೆ ದರ",
+  "settingsTaxIncluded": "ಮೆನು ಬೆಲೆಗಳಲ್ಲಿ ತೆರಿಗೆ ಸೇರಿದೆ",
+  "settingsServiceCharge": "ಸೇವಾ ಶುಲ್ಕ",
+  "settingsPrinters": "ಮುದ್ರಕಗಳು",
+  "settingsReceipts": "ರಸೀದಿಗಳು",
+  "settingsHeader": "ಶೀರ್ಷಿಕೆ",
+  "settingsFooter": "అడుగుటಿಪ್ಪಣಿ",
+  "settingsServer": "ಸರ್ವರ್",
+  "settingsThisDevice": "ಈ ಸಾಧನ",
+  "settingsAddTablet": "ಟ್ಯಾಬ್ಲೆಟ್ ಸೇರಿಸಿ",
+  "settingsSignOut": "ಸೈನ್ ಔಟ್",
+  "settingsDisconnect": "ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಿ",
+  "settingsDisconnectConfirm": "ಈ ಸಾಧನದ ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಬೇಕೇ?",
+  "printerNew": "ಮುದ್ರಕ ಸೇರಿಸಿ",
+  "printerPaperWidth": "ಕಾಗದದ ಅಗಲ",
+  "printerWhatItPrints": "ಅದು ಏನು ಮುದ್ರಿಸುತ್ತದೆ",
+  "printerInUse": "ಬಳಕೆಯಲ್ಲಿ",
+  "printerRemoveConfirm": "{name} ತೆಗೆದುಹಾಕಬೇಕೇ?",
+  "@printerRemoveConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "guestScanTitle": "ಆರ್ಡರ್‌ಗಾಗಿ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ",
+  "guestMenuTitle": "ಮೆನು",
+  "signInErrorNoUsername": "ನಿಮ್ಮ ಬಳಕೆದಾರ ಹೆಸರು ನಮೂದಿಸಿ.",
+  "signInErrorShortPin": "ನಿಮ್ಮ ಪಿನ್ ಕನಿಷ್ಠ 4 ಅಂಕೆಗಳು.",
+  "ticketSendCourseOnly": "{course} ಮಾತ್ರ ಕಳುಹಿಸಿ",
+  "@ticketSendCourseOnly": {
+    "placeholders": {
+      "course": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketBackToFloor": "ನೆಲಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+  "ticketCouldNotSend": "ಕಳುಹಿಸಲಾಗಲಿಲ್ಲ: {error}",
+  "@ticketCouldNotSend": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketCouldNotCancel": "ರದ್ದುಗೊಳಿಸಲಾಗಲಿಲ್ಲ: {error}",
+  "@ticketCouldNotCancel": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ticketEmptyBill": "ಈ ಬಿಲ್‌ನಲ್ಲಿ ಇನ್ನೂ ಏನೂ ಇಲ್ಲ",
+  "ticketVoided": "ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ",
+  "ticketSavedNotSent": "ಇಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ — ಇನ್ನೂ ಕಳುಹಿಸಿಲ್ಲ",
+  "ticketQuantity": "ಪ್ರಮಾಣ",
+  "ticketCourse": "ಕೋರ್ಸ್",
+  "ticketRetry": "ಮತ್ತೆ ಪ್ರಯತ್ನ",
+  "kdsStatusQueued": "ಸರದಿಯಲ್ಲಿ",
+  "kdsStatusPreparing": "ತಯಾರಾಗುತ್ತಿದೆ",
+  "kdsStatusReady": "ಸಿದ್ಧ",
+  "outletTitle": "ಔಟ್‌ಲೆಟ್",
+  "outletSwitch": "ಔಟ್‌ಲೆಟ್ ಬದಲಾಯಿಸಿ",
+  "outletAll": "ಎಲ್ಲಾ ಔಟ್‌ಲೆಟ್‌ಗಳು",
+  "settingsLanguage": "ಭಾಷೆ",
+  "settingsLanguageHint": "ಈ ಸಾಧನದ ಭಾಷೆ",
+  "floorNoTablesHint": "ವ್ಯವಸ್ಥಾಪಕರು ನೆಲ → ಟೇಬಲ್‌ಗಳಲ್ಲಿ ಟೇಬಲ್‌ಗಳನ್ನು ಸೇರಿಸಬಹುದು. ಅಲ್ಲಿಯವರೆಗೆ ನೀವು ಟೇಕ್‌ಅವೇ ಆರ್ಡರ್‌ಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಬಹುದು.",
+  "splitOwnBill": "ಅಥವಾ ಯಾರಿಗಾದರೂ ಅವರದೇ ಬಿಲ್ ನೀಡಿ",
+  "splitSeparateTax": "ಪ್ರತಿ ಬಿಲ್‌ನಲ್ಲಿ ಸೇವಾ ಶುಲ್ಕ ಮತ್ತು ತೆರಿಗೆಯನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ಲೆಕ್ಕಹಾಕಲಾಗುತ್ತದೆ.",
+  "splitEvenTitle": "ಎಲ್ಲರೂ ತಮ್ಮ ಪಾಲು ಪಾವತಿಸಿ",
+  "splitEvenHint": "ಒಂದು ಬಿಲ್, ಸಮಾನವಾಗಿ ವಿಭಜಿಸಿ. ಪ್ರತಿ ಪಾಲನ್ನು ಪ್ರತ್ಯೇಕ ಪಾವತಿಯಾಗಿ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "kdsEmptyHint": "ಕೌಂಟರ್ ಕಳುಹಿಸಿದ ಕೂಡಲೇ ಟಿಕೆಟ್‌ಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ.",
+  "settingsLanguageSystem": "ಸಾಧನದ ಭಾಷೆ",
+  "invTitle": "ಸ್ಟಾಕ್",
+  "@invTitle": {
+    "description": "Inventory section title"
+  },
+  "invSubtitle": "ಕೈಯಲ್ಲಿರುವ ಸ್ಟಾಕ್, ಅದರ ಬೆಲೆ, ಮತ್ತೆ ಏನು ತರಬೇಕು.",
+  "@invSubtitle": {
+    "description": "Inventory section subtitle"
+  },
+  "invNewItem": "ಹೊಸ ವಸ್ತು",
+  "@invNewItem": {
+    "description": "New stock item button"
+  },
+  "invStockValue": "ಸ್ಟಾಕ್ ಮೌಲ್ಯ",
+  "@invStockValue": {
+    "description": "Total stock value label"
+  },
+  "invLowStock": "ಕಡಿಮೆ ಸ್ಟಾಕ್",
+  "@invLowStock": {
+    "description": "Low stock section header"
+  },
+  "invLastRestock": "ಕೊನೆಯ ಖರೀದಿ {date}",
+  "@invLastRestock": {
+    "description": "Last restock date, {date} placeholder",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "invNeedsReview": "ಪರಿಶೀಲನೆ ಅಗತ್ಯ",
+  "@invNeedsReview": {
+    "description": "Needs review flag"
+  },
+  "invLow": "ಕಡಿಮೆ",
+  "@invLow": {
+    "description": "Low badge"
+  },
+  "invBalance": "ಶಿಲ್ಕು",
+  "@invBalance": {
+    "description": "Current balance label"
+  },
+  "invThreshold": "ಮರುಖರೀದಿ ಮಟ್ಟ",
+  "@invThreshold": {
+    "description": "Reorder threshold label"
+  },
+  "invUnit": "ಘಟಕ",
+  "@invUnit": {
+    "description": "Unit label (kg, L, pcs)"
+  },
+  "invCostPerUnit": "{unit}ಗೆ ಬೆಲೆ",
+  "@invCostPerUnit": {
+    "description": "Cost per unit, {unit} placeholder",
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "invActive": "ಸಕ್ರಿಯ",
+  "@invActive": {
+    "description": "Active switch label"
+  },
+  "invPurchase": "ಖರೀದಿ",
+  "@invPurchase": {
+    "description": "Purchase action"
+  },
+  "invWastage": "ವ್ಯರ್ಥ",
+  "@invWastage": {
+    "description": "Wastage action"
+  },
+  "invAdjust": "ಹೊಂದಾಣಿಕೆ",
+  "@invAdjust": {
+    "description": "Adjust action"
+  },
+  "invQuantity": "ಪ್ರಮಾಣ",
+  "@invQuantity": {
+    "description": "Quantity field label"
+  },
+  "invNote": "ಟಿಪ್ಪಣಿ",
+  "@invNote": {
+    "description": "Note field label"
+  },
+  "invEmpty": "ಇನ್ನೂ ಸ್ಟಾಕ್ ವಸ್ತುಗಳಿಲ್ಲ",
+  "@invEmpty": {
+    "description": "Empty inventory title"
+  },
+  "invEmptyHint": "ಹಿಟ್ಟು, ಹಾಲು, ಕೋಳಿ ಸೇರಿಸಿ — ಅಡುಗೆಮನೆಯಲ್ಲಿರುವುದು.",
+  "@invEmptyHint": {
+    "description": "Empty inventory hint"
+  },
+  "invRecipe": "ಪಾಕವಿಧಾನ",
+  "@invRecipe": {
+    "description": "Recipe section title"
+  },
+  "invRecipeHint": "ಪ್ರತಿ ಸರ್ವಿಂಗ್‌ಗೆ ಏನು ಬೇಕು. ಬಡಿಸಿದಾಗ ತಾನಾಗಿಯೇ ಕಳೆಯುತ್ತದೆ.",
+  "@invRecipeHint": {
+    "description": "Recipe section hint"
+  },
+  "invAddIngredient": "ಪದಾರ್ಥ ಸೇರಿಸಿ",
+  "@invAddIngredient": {
+    "description": "Add ingredient button"
+  },
+  "invQtyPerServing": "ಪ್ರತಿ ಸರ್ವಿಂಗ್‌ಗೆ",
+  "@invQtyPerServing": {
+    "description": "Quantity per serving label"
+  },
+  "invSaveItemFirst": "ಮೊದಲು ವಸ್ತುವನ್ನು ಉಳಿಸಿ, ನಂತರ ಪಾಕವಿಧಾನ ಸೇರಿಸಿ.",
+  "@invSaveItemFirst": {
+    "description": "Recipe on unsaved item hint"
+  },
+  "invPurchaseTitle": "ಖರೀದಿ ದಾಖಲಿಸಿ",
+  "@invPurchaseTitle": {
+    "description": "Purchase dialog title"
+  },
+  "invWastageTitle": "ವ್ಯರ್ಥ ದಾಖಲಿಸಿ",
+  "@invWastageTitle": {
+    "description": "Wastage dialog title"
+  },
+  "invAdjustTitle": "ಸ್ಟಾಕ್ ಹೊಂದಿಸಿ",
+  "@invAdjustTitle": {
+    "description": "Adjust dialog title"
+  },
+  "invAdjustHint": "ಲೆಕ್ಕಪರಿಶೋಧಿತ ತಿದ್ದುಪಡಿಗಳು — ಉದಾ. ಎಣಿಕೆ ವ್ಯತ್ಯಾಸ.",
+  "@invAdjustHint": {
+    "description": "Adjust dialog hint"
+  },
+  "invPickIngredient": "ಪದಾರ್ಥ ಆರಿಸಿ",
+  "@invPickIngredient": {
+    "description": "Pick ingredient dialog title"
+  },
+  "invEdit": "ಸಂಪಾದಿಸು",
+  "@invEdit": {
+    "description": "Edit action"
+  }
+}
